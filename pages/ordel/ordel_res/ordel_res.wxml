@@ -13,12 +13,12 @@
     <view class='top_res'>
       <view class='top_res_title'>
         <text class='top_res_name'>朱萧木</text>
-        <text class='top_res_label'>卓越</text>
-        <text class='top_res_label'>卓越</text>
+        <!-- <text class='top_res_label'>卓越</text>
+        <text class='top_res_label'>卓越</text> -->
       </view>
-      <view class='top_res_detail'>天津工业大学 · 环境监测</view>
+      <view class='top_res_detail'>天津市南开区宾水西道天穆园4栋201</view>
     </view>
-    <text class='iconfont icon-arr-right-red'></text>
+    <text class='distance'>2.4KM</text>
   </view>
   <view class='list_wrap borT'>
     <view class='list_item'>
@@ -33,17 +33,17 @@
       <text class='title'>时间</text>
       <text class='mintitle'>7-12 12:00~13:00(明天)</text>
     </view>
-    <view class='list_item'>
+    <!-- <view class='list_item'>
       <text class='title'>地点</text>
       <text class='mintitle'>天津市南开区宾水西道天穆园4栋201</text>
-    </view>
+    </view> -->
     <view class='list_item'>
       <text class='title'>订单状态</text>
-      <text class='mintitle'>待付款</text>
+      <text class='mintitle'>待授课</text>
     </view>
   </view>
   <view class='price_group borT'>
-    <text class='price_title'>实际付款</text>
+    <text class='title'>订单金额</text>
     <text class='price_mintitle'>￥299.00</text>
   </view>
   <view class='tip_group'>
@@ -54,6 +54,6 @@
 </view>
 
 <view class='bottom_group'>
-  <view class='cendel'>取消订单</view>
-  <view class='payed'>付款</view>
+  <view class='cendel'>隐藏此单</view>
+  <view class='payed'>立即接单</view>
 </view>

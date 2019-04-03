@@ -1,5 +1,12 @@
 {
   "pages": [
+    "pages/certificate/certificate",
+    "pages/authentication/authentication",
+    "pages/information/information",
+    "pages/ordel/ordel_res/ordel_res",
+    "pages/my/my_details/my_details",
+    "pages/income_details/income_details",
+    "pages/income/income",
     "pages/wallet/wallet",
     "pages/index/teacher_index/teacher_index",
     "pages/share/share",
@@ -13,9 +20,8 @@
     "pages/my/my_adder/my_adder",
     "pages/bind_phone/bind_phone",
     "pages/login/login",
-    "pages/my/my_details/my_details",
     "pages/my/my_teacher/my_teacher",
-    "pages/ordel/ordel_res/ordel_res",
+    
     
     "pages/ordel/bargain/bargain",
     "pages/ordel/sure_ordel/ordel_sure",

@@ -1,0 +1,34 @@
+<view class='step_group'>
+  <view class='step '>1</view>
+  <view class='line'></view>
+  <view class='step step_active'>2</view>
+  <view class='line'></view>
+  <view class='step'>3</view>
+</view>
+<view class='tip'>手持身份证照片
+  <text class='tip_click'>查看拍照规范</text>
+</view>
+
+<view class='up_wrap'>
+  <block>
+    <text class='iconfont icon-hao'></text>
+    <text class='title'>身份证正面</text>
+  </block>
+</view>
+<view class='up_wrap'>
+  <block>
+    <text class='iconfont icon-hao'></text>
+    <text class='title'>身份证反面</text>
+  </block>
+</view>
+<view class='button'>
+下一步
+</view>
+
+<view class='mask'>
+  <view class='mask_tip'></view>
+  <view class='mask_tip'></view>
+  <view class='mask_title'>拍照规范示意</view>
+  <view class='mask_mintitle'>这里是说明性文字这里是说明性文字</view>
+  <view class='mask_mintitle'>这里是说明性文字</view>
+</view>

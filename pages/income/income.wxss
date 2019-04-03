@@ -1,0 +1,68 @@
+page {
+  box-sizing: border-box;
+  padding: 0rpx 32rpx;
+}
+
+.list {
+  width: 100%;
+  height: 140rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.list_head {
+  width: 80rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.list_head_title {
+  color: rgba(153, 153, 153, 1);
+  font-size: 32rpx;
+}
+
+.list_head_mintitle {
+  color: rgba(153, 153, 153, 1);
+  font-size: 24rpx;
+}
+
+.list_group {
+  width: 400rpx;
+  height: auto;
+  margin-left: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.list_logo {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+}
+
+.list_group_res {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16rpx;
+}
+
+.list_group_title {
+  font-size: 32rpx;
+  color: rgba(44, 44, 44, 1);
+}
+
+.list_group_mintitle {
+  font-size: 24rpx;
+  color: rgba(44, 44, 44, 1);
+}
+
+.list_price{
+  font-size: 48rpx;
+  color:rgba(231, 73, 122, 1);
+  margin-left: auto;
+}

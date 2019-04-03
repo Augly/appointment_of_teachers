@@ -1,0 +1,29 @@
+<view class='list borT'>
+    <view class='list_head'>
+      <text class='list_head_title'>周五</text>
+      <text class='list_head_mintitle'>10-12</text>
+    </view>
+    <view class='list_group'>
+      <image class='list_logo' src='http://class.zzvlm.com/3529@2x.png'></image>
+      <view class='list_group_res'>
+        <text class='list_group_title'>佣金</text>
+        <text class='list_group_mintitle'>通过订单[MAXF10938401]</text>
+      </view>
+    </view>
+    <text class='list_price'>+72</text>
+</view>
+
+<view class='list borT'>
+    <view class='list_head'>
+      <text class='list_head_title'>周五</text>
+      <text class='list_head_mintitle'>10-12</text>
+    </view>
+    <view class='list_group'>
+      <image class='list_logo' src='http://class.zzvlm.com/3529@2x.png'></image>
+      <view class='list_group_res'>
+        <text class='list_group_title'>佣金</text>
+        <text class='list_group_mintitle'>通过订单[MAXF10938401]</text>
+      </view>
+    </view>
+    <text class='list_price'>+72</text>
+</view>

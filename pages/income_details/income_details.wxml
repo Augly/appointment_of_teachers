@@ -1,0 +1,26 @@
+<view class='content'>
+  <view class='content_title'>+120</view>
+  <view class='content_mintitle'>所得收益</view>
+  <block>
+    <view class='list borT'>
+      <text class='list_title'>收益类型</text>
+      <text class='list_mintitle'>佣金</text>
+    </view>
+    <view class='list borT'>
+      <text class='list_title'>对方账号</text>
+      <text class='list_mintitle'>sgtu</text>
+    </view>
+    <view class='list borT'>
+      <text class='list_title'>收益金额(元)</text>
+      <text class='list_mintitle'>120</text>
+    </view>
+    <view class='list'>
+      <text class='list_title'>创建时间</text>
+      <text class='list_mintitle'>2018-12-05 10:00:00</text>
+    </view>
+  </block>
+
+  <view class='tip'>遇到任何问题？请
+    <text class='call_me'>联系我们</text>
+  </view>
+</view>

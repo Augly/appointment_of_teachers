@@ -1,0 +1,20 @@
+<view class='step_group'>
+  <view class='step '>1</view>
+  <view class='line'></view>
+  <view class='step step_active'>2</view>
+  <view class='line'></view>
+  <view class='step'>3</view>
+</view>
+<view class='tip'>请上传荣誉证书(如有)</view>
+<view class='list'>
+  <text class=''></text>
+</view>
+<view class='up_wrap'>
+  <block>
+    <text class='iconfont icon-hao'></text>
+    <text class='title'>身份证正面</text>
+  </block>
+</view>
+<view class='button'>
+  下一步
+</view>
