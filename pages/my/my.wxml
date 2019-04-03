@@ -1,0 +1,56 @@
+<view class='head'>
+  <view class='head_name'>
+    <view class='head_nameGroup'>
+      <view class='name'>
+        <text class='name_title'>小环琳儿</text>
+        <text class='iconfont icon-bianji1'></text>
+      </view>
+      <text class='mintitle'>每天一斤酒赛过活神仙</text>
+    </view>
+    <image class='portrait' src='http://class.zzvlm.com/timg@2x.png'></image>
+  </view>
+  <view class='head_other'>
+    <view class='otherItem'>
+      <view class='left'>
+        <text class='iconfont icon-kemusi'></text>
+        <text class='left_mintitle'>全部订单</text>
+      </view>
+      <text class='right'>0</text>
+    </view>
+     <view class='otherItem'>
+      <view class='left'>
+        <text class='iconfont icon-qianbao'></text>
+        <text class='left_mintitle'>我的钱包</text>
+      </view>
+      <text class='right'>0</text>
+    </view>
+  </view>
+</view>
+<view class='list_group'>
+  <view class='list_item borT'>
+    <text class='iconfont icon-qianbao'></text>
+    <text class='list_item_title'>我的钱包</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <view class='list_item borT'>
+    <text class='iconfont icon-yijianfankui'></text>
+    <text class='list_item_title'>意见反馈</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <view class='list_item borT'>
+    <text class='iconfont icon-icon1'></text>
+    <text class='list_item_title'>账户详情</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <view class='list_item borT'>
+    <text class='iconfont icon-xin1'></text>
+    <text class='list_item_title'>关于我们</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+    <view class='list_item '>
+    <text class='iconfont icon-fenxiang'></text>
+    <text class='list_item_title'>分享</text>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <image class='call_group' src='http://class.zzvlm.com/call@2x.png'></image>
+</view>

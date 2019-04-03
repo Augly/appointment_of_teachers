@@ -1,0 +1,15 @@
+<view class='content'>
+  <text class='title'>评价内容</text>
+  <textarea class='textWrap' placeholder='输入您的点评内容'></textarea>
+  <view class='start_group'>
+    <text class='mintitle'>选择评分</text>
+    <block>
+      <text class='iconfont icon-xingxing'></text>
+      <text class='iconfont icon-xingxing'></text>
+      <text class='iconfont icon-xingxing'></text>
+      <text class='iconfont icon-xingxing'></text>
+      <text class='iconfont icon-xingxing'></text>
+    </block>
+  </view>
+  <view class='button'>确定下单</view>
+</view>

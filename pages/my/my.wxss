@@ -1,0 +1,141 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: RGBA(223, 243, 250, 1);
+}
+
+.head {
+  width: 100%;
+  height: 400rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.head_name {
+  width: 100%;
+  height: 144rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.head_nameGroup {
+  width: 450rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  font-size: 40rpx;
+}
+
+.name_title {
+  font-weight: 500;
+  color: rgba(44, 44, 44, 1);
+}
+
+.icon-bianji1 {
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+
+.mintitle {
+  font-size: 26rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.portrait {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+.head_other{
+  width: 100%;
+  height: 144rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.otherItem {
+  width: 336rpx;
+  height: 144rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 6rpx 20rpx rgba(0, 0, 0, 0.07);
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  padding: 22rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.left{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.left .iconfont{
+  font-size: 36rpx;
+  color: rgba(96, 234, 243, 1);
+}
+.left_title{
+  font-size: 32rpx;
+  color: rgba(96, 234, 243, 1);
+}
+.left_mintitle{
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 10rpx;
+}
+.right{
+  font-size: 32rpx;
+  color: rgba(44, 44, 44, 1);
+}
+.list_group {
+  width: 100%;
+  /* height: 660rpx; */
+  box-sizing: border-box;
+  padding: 0rpx 30rpx 40rpx 30rpx;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.list_item {
+  width: 100%;
+  height: 110rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.list_item .iconfont {
+  font-size: 36rpx;
+  color: rgba(96, 234, 243, 1);
+}
+
+.list_item_title {
+  font-size: 30rpx;
+  color: rgba(44, 44, 44, 1);
+  margin-left: 16rpx;
+}
+
+.list_item .icon-arr-right-red {
+  margin-left: auto;
+  font-size: 26rpx;
+}
+
+.list_item .hart {
+  color: RGBA(255, 65, 109, 1);
+}
+
+.call_group {
+  display: block;
+  width: 240rpx;
+  height: 64rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}

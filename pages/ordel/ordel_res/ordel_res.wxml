@@ -1,0 +1,59 @@
+<view class='head'>
+  <view class='left'>
+    <text class='left_title'>
+      等待卖家付款
+    </text>
+    <text class='left_mintitle'>剩余23小时12分自动关闭</text>
+  </view>
+  <!-- <image></image> -->
+</view>
+<view class='wrap'>
+  <view class='head_top borT'>
+    <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
+    <view class='top_res'>
+      <view class='top_res_title'>
+        <text class='top_res_name'>朱萧木</text>
+        <text class='top_res_label'>卓越</text>
+        <text class='top_res_label'>卓越</text>
+      </view>
+      <view class='top_res_detail'>天津工业大学 · 环境监测</view>
+    </view>
+    <text class='iconfont icon-arr-right-red'></text>
+  </view>
+  <view class='list_wrap borT'>
+    <view class='list_item'>
+      <text class='title'>年级</text>
+      <text class='mintitle'>初中一年级</text>
+    </view>
+    <view class='list_item'>
+      <text class='title'>科目</text>
+      <text class='mintitle'>化学</text>
+    </view>
+    <view class='list_item'>
+      <text class='title'>时间</text>
+      <text class='mintitle'>7-12 12:00~13:00(明天)</text>
+    </view>
+    <view class='list_item'>
+      <text class='title'>地点</text>
+      <text class='mintitle'>天津市南开区宾水西道天穆园4栋201</text>
+    </view>
+    <view class='list_item'>
+      <text class='title'>订单状态</text>
+      <text class='mintitle'>待付款</text>
+    </view>
+  </view>
+  <view class='price_group borT'>
+    <text class='price_title'>实际付款</text>
+    <text class='price_mintitle'>￥299.00</text>
+  </view>
+  <view class='tip_group'>
+    <text class='tip'>订单编号：831202348210410</text>
+    <text class='tip'>创建时间：2018-09-07 12:32</text>
+    <text class='tip'>备注信息：请事前电话预约确认下</text>
+  </view>
+</view>
+
+<view class='bottom_group'>
+  <view class='cendel'>取消订单</view>
+  <view class='payed'>付款</view>
+</view>

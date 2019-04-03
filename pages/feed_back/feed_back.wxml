@@ -1,0 +1,10 @@
+<view class="content">
+  <view class='text_wrap borT'>
+    <textarea placeholder='写下您的意见' maxlength='120'></textarea>
+    <text class='tip'>120/120字</text>
+  </view>
+
+    <image class='up_img' src='http://class.zzvlm.com/img3418@2x.png'></image>
+</view>
+
+<view class='button'>确定下单</view>

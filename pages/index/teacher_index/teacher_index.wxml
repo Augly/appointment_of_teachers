@@ -1,0 +1,155 @@
+<view class='content'>
+    <image class='head_group' src='http://class.zzvlm.com/teach.png'></image>
+    <view class='user_info_group'>
+      <text class='user_name'>小样儿</text>
+      <view class='tab_group'>
+        <text class='tab_item'>卓越</text>
+        <text class='tab_item'>生动形象</text>
+      </view>
+      <view class='start_group'>
+        <text class='iconfont icon-xingxing select'></text>
+        <text class='iconfont icon-xingxing select'></text>
+        <text class='iconfont icon-xingxing select'></text>
+        <text class='iconfont icon-xingxing'></text>
+        <text class='iconfont icon-xingxing'></text>
+      </view>
+    </view>
+  <view class='class'>
+    <view class='class_title'>
+      <image class='class_logo' src='http://class.zzvlm.com/123551@2x.png'></image>
+      <text class='class_title_name'>优势学科</text>
+    </view>
+    <view class='class_kind'>
+      <view class='kind_list'>
+        语文
+      </view>
+      <view class='kind_list'>
+        语文
+      </view>
+      <view class='kind_list'>
+        语文
+      </view>
+      <view class='kind_list'>
+        语文
+      </view>
+      <view class='kind_list'>
+        语文
+      </view>
+    </view>
+  </view>
+  <view class='class'>
+    <view class='class_title'>
+      <image class='class_logo' src='http://class.zzvlm.com/1223552@2x.png'></image>
+      <text class='class_title_name'>用户评价(27)</text>
+      <text class='class_mintitle'>97%好评</text>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+    <view class='evaluate_list'>
+      <view class='list_head'>
+        <image src='http://class.zzvlm.com/timg@2x.png' class='list_head_val'></image>
+        <text class='list_head_name'>逆游的鱼儿</text>
+        <block>
+          <text class='iconfont icon-xingxing ml'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+        </block>
+        <text class='list_head_time '>7-02 12:21</text>
+      </view>
+      <view class='list_res'>
+        老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！
+      </view>
+    </view>
+    <view class='evaluate_list'>
+      <view class='list_head'>
+        <image src='http://class.zzvlm.com/timg@2x.png' class='list_head_val'></image>
+        <text class='list_head_name'>逆游的鱼儿</text>
+        <block>
+          <text class='iconfont icon-xingxing ml'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+        </block>
+        <text class='list_head_time '>7-02 12:21</text>
+      </view>
+      <view class='list_res'>
+        老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！
+      </view>
+    </view>
+    <view class='evaluate_list'>
+      <view class='list_head'>
+        <image src='http://class.zzvlm.com/timg@2x.png' class='list_head_val'></image>
+        <text class='list_head_name'>逆游的鱼儿</text>
+        <block>
+          <text class='iconfont icon-xingxing ml'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+        </block>
+        <text class='list_head_time '>7-02 12:21</text>
+      </view>
+      <view class='list_res'>
+        老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！
+      </view>
+    </view>
+    <view class='evaluate_list'>
+      <view class='list_head'>
+        <image src='http://class.zzvlm.com/timg@2x.png' class='list_head_val'></image>
+        <text class='list_head_name'>逆游的鱼儿</text>
+        <block>
+          <text class='iconfont icon-xingxing ml'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+        </block>
+        <text class='list_head_time '>7-02 12:21</text>
+      </view>
+      <view class='list_res'>
+        老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！
+      </view>
+    </view>
+    <view class='evaluate_list'>
+      <view class='list_head'>
+        <image src='http://class.zzvlm.com/timg@2x.png' class='list_head_val'></image>
+        <text class='list_head_name'>逆游的鱼儿</text>
+        <block>
+          <text class='iconfont icon-xingxing ml'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+        </block>
+        <text class='list_head_time '>7-02 12:21</text>
+      </view>
+      <view class='list_res'>
+        老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！
+      </view>
+    </view>
+    <view class='evaluate_list'>
+      <view class='list_head'>
+        <image src='http://class.zzvlm.com/timg@2x.png' class='list_head_val'></image>
+        <text class='list_head_name'>逆游的鱼儿</text>
+        <block>
+          <text class='iconfont icon-xingxing ml'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+          <text class='iconfont icon-xingxing'></text>
+        </block>
+        <text class='list_head_time '>7-02 12:21</text>
+      </view>
+      <view class='list_res'>
+        老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！老师人很温和，思维清晰，讲解到位，清强力推荐！！！
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='button_group'>
+  <view class='button_left'>找TA上课</view>
+  <view class='button_right'>我也是老师</view>
+</view>

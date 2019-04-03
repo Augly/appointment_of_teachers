@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view class='headGroup'>
+  <view class='personlInfo'>
+    <image src='http://class.zzvlm.com/timg@2x.png' class='portrait'>
+    </image>
+    <text class='name'>鱼小二</text>
+    <image class='type' src='http://class.zzvlm.com/3721@2x.png'></image>
+  </view>
+</view>
+<view class='z-5'></view>
+<view class='z-6'></view>
+<view class='z-7'>
+  <text class='title'>请填写家教预约信息</text>
+  <view class='list_wrap'>
+    <view class='list borT'>
+      <text class='iconfont icon-nianji'></text>
+      <text class='list_title'>年级</text>
+      <view class='list_Centent'>如初中1年级</view>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+    <view class='list borT'>
+      <text class='iconfont icon-kemusi'></text>
+      <text class='list_title'>科目</text>
+      <view class='list_Centent'>如英语、化学</view>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+    <view class='list borT'>
+      <text class='iconfont icon-riqi'></text>
+      <text class='list_title'>日期</text>
+      <view class='list_Centent'>如12月25日</view>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+    <view class='list borT'>
+      <text class='iconfont icon-shijian'></text>
+      <text class='list_title'>时间</text>
+      <view class='list_Centent'>如12:00~13:00</view>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+    <view class='list'>
+      <text class='iconfont icon-sousuoyemiantubiao'></text>
+      <text class='list_title'>级别</text>
+      <view class='list_Centent'>选择老师级别</view>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+    <view class='list'>
+      <text class='iconfont icon-biaoqian'></text>
+      <text class='list_title'>标签</text>
+      <view class='list_Centent w450'>
+        <text class='minTab minTabActive'>985院校</text>
+        <text class='minTab'>211院校</text>
+      </view>
+    </view>
+  </view>
+  <view class='sumbit'>一键下单</view>
+  <view class='broadcast'>
+    <text class='iconfont icon-guangbo'></text>
+    <view class='broadWrap'></view>
+  </view>
+
+</view>
+
+<!-- <view class='mask'>
+    <view class='mask_content'>
+      <text class='iconfont icon-cha mask_iconfont'></text>
+      <image class='mask_img' src='http://class.zzvlm.com/afca12c4e81e2e2a817afa46fc3e6954bb98fad465e6b-GoCNdj_fw658@2x.png'></image>
+    </view>
+</view> -->

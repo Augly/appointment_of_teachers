@@ -1,0 +1,243 @@
+/* pages/ordel/ordel.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: RGBA(234, 234, 234, 1);
+  position: relative;
+}
+
+.tabWrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 96rpx;
+  background-color: rgba(223, 243, 250, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tabItem {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  line-height: 96rpx;
+  font-size: 26rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.tabActive::after {
+  position: absolute;
+  content: '';
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 80rpx;
+  height: 4rpx;
+  background: linear-gradient(90deg, rgba(104, 227, 245, 1) 0%, rgba(123, 235, 221, 1) 100%);
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 96rpx 24rpx 0rpx 24rpx;
+}
+
+.list {
+  width: 100%;
+  /* height: 472rpx; */
+  background-color: rgba(255, 255, 255, 1);
+  margin-top: 32rpx;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  padding: 42rpx 24rpx;
+}
+
+.list_head {
+  width: 100%;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.head_portrait {
+  width: 94rpx;
+  height: 94rpx;
+}
+
+.head_name {
+  font-size: 32rpx;
+  color: rgba(44, 44, 44, 1);
+  margin-left: 16rpx;
+  font-weight: 500;
+}
+
+.head_time {
+  font-size: 26rpx;
+  color: rgba(44, 44, 44, 1);
+  /* margin-left: 20rpx; */
+  text-indent: 20rpx;
+  position: relative;
+}
+
+.head_time::before {
+  content: '';
+  position: absolute;
+  width: 4rpx;
+  height: 4rpx;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 1);
+  top: 18rpx;
+  left: 8rpx;
+}
+
+.head_ordel_money {
+  font-size: 26rpx;
+  color: rgba(44, 44, 44, 1);
+  margin-left: auto;
+}
+
+.classInfo {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 20rpx 50rpx 30rpx 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.class_group {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line {
+  width: 80rpx;
+  height: 2rpx;
+  margin: 0 25rpx;
+  border-bottom: 2rpx dashed rgba(96, 234, 243, 1);
+}
+
+.class_name, .class_time {
+  width: 200rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+
+.title {
+  font-size: 40rpx;
+  color: rgba(96, 234, 243, 1);
+}
+
+.min_title {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.ordert_type {
+  margin-top: 26rpx;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.scope_group {
+  width: 100%;
+  height: 50rpx;
+  margin-top: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.scope_normel_button {
+  width: 160rpx;
+  height: 48rpx;
+  border: 1rpx solid rgba(96, 234, 243, 1);
+  text-align: center;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color: rgba(96, 234, 243, 1);
+  border-radius: 8rpx;
+  margin-right: 8rpx;
+}
+
+.button_active {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(96, 234, 243, 1);
+  margin-right: 0;
+  /* margin-left: auto; */
+}
+
+.adder_list {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22rpx;
+  color: rgba(44, 44, 44, 1);
+}
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  z-index: 10;
+}
+
+.mask_logo {
+  display: block;
+  width: 244rpx;
+  height: 244rpx;
+  margin: 0 auto;
+  margin-top: 200rpx;
+}
+
+.type_wrap {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.mask_title {
+  width: 444rpx;
+  height: auto;
+  font-size: 28rpx;
+  color: RGBA(255, 255, 255, 1);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.mask_buttom {
+  width: 336rpx;
+  height: 80rpx;
+  background-color: RGBA(96, 234, 243, 1);
+  border-radius: 4rpx;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32rpx;
+  margin-top: 58rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.mask_sure {
+ background-color: RGBA(255, 255, 255, 1);
+ color: rgba(96, 234, 243, 1);
+ margin-top: 18rpx;
+}

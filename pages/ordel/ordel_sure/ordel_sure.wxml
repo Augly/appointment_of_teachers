@@ -1,0 +1,93 @@
+<view class='content'>
+  <view class='wrap'>
+    <image class='head_group' src='http://class.zzvlm.com/teach.png'></image>
+    <view class='res_group'>
+      <text class='res_title'>详细信息</text>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+    <view class='user_info_group'>
+      <text class='user_name'>小样儿</text>
+      <view class='tab_group'>
+        <text class='tab_item'>卓越</text>
+        <text class='tab_item'>生动形象</text>
+      </view>
+      <view class='start_group'>
+        <text class='iconfont icon-xingxing select'></text>
+        <text class='iconfont icon-xingxing select'></text>
+        <text class='iconfont icon-xingxing select'></text>
+        <text class='iconfont icon-xingxing'></text>
+        <text class='iconfont icon-xingxing'></text>
+      </view>
+    </view>
+    <view class='order_title borT'>
+      <text class='title'>订单信息</text>
+    </view>
+    <view class='orde_list'>
+      <text class='list_title'>年级:</text>
+      <text class='list_mintitle'>初中一年级</text>
+    </view>
+    <view class='orde_list'>
+      <text class='list_title'>科目:</text>
+      <text class='list_mintitle'>英语</text>
+    </view>
+    <view class='orde_list'>
+      <text class='list_title'>时间:</text>
+      <text class='list_mintitle'>周四 12:00（7-12）</text>
+    </view>
+    <!-- <view class='other_money'>
+        <text class='other_title'>选择额外费用类型</text>
+        <text class='iconfont icon-arrow-up1'></text>
+    </view> -->
+
+    <view class='money_wrap'>
+      <view class='money_list borT'>
+        <text class='title'>选择额外费用类别</text>
+        <text class='iconfont icon-arrow-up'></text>
+      </view>
+      <view class='money_list borT'>
+        <view class='left'>
+          <view class='checkBox checkBoxActive'></view>
+          <text class='check_title'>附加车费</text>
+        </view>
+        <view class='right'>
+          <text class='ipt_before'>￥</text>
+          <input class='ipt_money' placeholder='填写金额'></input>
+        </view>
+      </view>
+      <view class='money_list borT'>
+        <view class='left'>
+          <view class='checkBox'></view>
+          <text class='check_title'>附加饭费</text>
+        </view>
+        <view class='right'>
+          <text class='ipt_before'>￥</text>
+          <input class='ipt_money' placeholder='填写金额'></input>
+        </view>
+      </view>
+      <view class='money_list'>
+        <view class='left'>
+          <view class='checkBox'></view>
+          <text class='check_title'>附加感谢费</text>
+        </view>
+        <view class='right'>
+          <text class='ipt_before'>￥</text>
+          <input class='ipt_money' placeholder='填写金额'></input>
+        </view>
+      </view>
+    </view>
+    <view class='bz'>
+      <text class='list_title'>备注:</text>
+      <input class='list_mintitle' placeholder='输入备注信息' style='width:300rpx'></input>
+      <text class='tip'>10/10</text>
+    </view>
+  </view>
+</view>
+<cover-view class='sure_group'>
+  <cover-view class='brid'>2</cover-view>
+  <cover-image class='car_img' src="http://class.zzvlm.com/car@2x.png"></cover-image>
+  <cover-view class='price_group'>
+    <text class='main_price'>120.0</text>
+    <text class='other_price'>额外费用¥0.00</text>
+  </cover-view>
+  <cover-view class='sure_button'>确定下单</cover-view>
+</cover-view>

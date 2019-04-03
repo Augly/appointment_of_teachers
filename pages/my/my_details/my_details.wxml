@@ -1,0 +1,28 @@
+<view class="content">
+<view class='list list_val white'>
+  <text class='title'>头像</text>
+  <image src='http://class.zzvlm.com/timg@2x.png' class='val_logo'></image>
+</view>
+  <view class='list'>
+    <text class='title'>昵称</text>
+    <text class='mintitle'>鱼小二</text>
+  </view>
+  <view class='list white'>
+    <text class='title'>手机号</text>
+    <text class='mintitle'>15022010010</text>
+  </view>
+  <view class='list '>
+    <text class='title'>性别</text>
+    <text class='mintitle'>女</text>
+  </view>
+  <view class='list white'>
+    <text class='title'>年龄</text>
+    <text class='mintitle'>请选择</text>
+  </view>
+  <view class='list'>
+    <text class='title'>我的地址</text>
+    <text class='mintitle'>河西区友谊路萧...</text>
+  </view>
+</view>
+
+<view class='out_group'>安全退出</view>

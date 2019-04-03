@@ -1,0 +1,66 @@
+page {
+  background-color: rgba(223, 243, 250, 1);
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+
+.title_group {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: rgba(44, 44, 44, 1);
+}
+
+.icon-arr-right-red {
+  font-size: 24rpx;
+  color: rgba(44, 44, 44, 1);
+  margin-left: 5rpx;
+  line-height: 24rpx;
+}
+
+.logo {
+  width: 183rpx;
+  height: 183rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 102rpx;
+}
+
+.money {
+  text-align: center;
+  font-weight: bold;
+  font-size: 80rpx;
+  color: rgba(44, 44, 44, 1);
+  margin-top: 10rpx;
+}
+
+.tip {
+  color: rgba(44, 44, 44, 1);
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 10rpx;
+  margin-bottom: 134rpx;
+}
+
+.tipR {
+  font-size: 28rpx;
+  color: rgba(153, 153, 153, 1);
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.button {
+  width: 100%;
+  height: 88rpx;
+  background: rgba(96, 234, 243, 1);
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: rgba(255, 255, 255, 1);
+  font-size: 34rpx;
+  margin-top: 76rpx;
+}

@@ -1,0 +1,14 @@
+<view class="content">
+  <view class='list marT170'>
+    <text class='title'>手机号</text>
+    <input class='ipt_group' placeholder='' placeholder-class='colorBlue'></input>
+    <view class='code_wrap'>验证</view>
+  </view>
+  <view class='list'>
+    <text class='title'>验证码</text>
+    <input class='ipt_group' placeholder='' placeholder-class='colorBlue'></input>
+    <!-- <view class='code_wrap'>验证</view> -->
+  </view>
+</view>
+
+<view class='buttom'>立即绑定</view>

@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/wallet/wallet",
+    "pages/index/teacher_index/teacher_index",
+    "pages/share/share",
+    "pages/my/my",
+    "pages/ordel/ordel",
+    "pages/index/index",
+    "pages/teacher/teacher",
+    "pages/evaluate/evaluate",
+    "pages/feed_back/feed_back",
+    "pages/my/about_us/about_us",
+    "pages/my/my_adder/my_adder",
+    "pages/bind_phone/bind_phone",
+    "pages/login/login",
+    "pages/my/my_details/my_details",
+    "pages/my/my_teacher/my_teacher",
+    "pages/ordel/ordel_res/ordel_res",
+    
+    "pages/ordel/bargain/bargain",
+    "pages/ordel/sure_ordel/ordel_sure",
+    "pages/ordel/ordel_sure/ordel_sure",
+    "pages/index/select_teacher/select_teacher"
+    
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#72E7E7",
+    "navigationBarTitleText": "约课",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#60EAF3",
+    "list": [
+      {
+        "pagePath": "pages/ordel/ordel",
+        "text": "首页",
+        "iconPath": "status/fill@2x.png",
+        "selectedIconPath": "status/indexfill@2xselect.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "status/2602@2x.png",
+        "selectedIconPath": "status/3748@2x.png"
+      }
+    ]
+  }
+}

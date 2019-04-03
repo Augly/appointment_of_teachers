@@ -1,0 +1,104 @@
+<view class="head">
+  <view class='head_wrap'>
+    <view class='head_top '>
+      <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
+      <view class='top_res'>
+        <view class='top_res_title'>
+          <text class='top_res_name'>朱萧木</text>
+          <text class='top_res_label'>卓越</text>
+          <text class='top_res_label'>卓越</text>
+        </view>
+        <view class='top_res_detail'>天津工业大学 · 环境监测</view>
+      </view>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+    <view class='head_bottom'>
+      <text class='bottom_title'>已优惠</text>
+      <text class='bottom_price'>12.00</text>
+    </view>
+  </view>
+</view>
+<view class='content'>
+  <view class='button_return'>帮TA砍价</view>
+  <view class='button_group'>我也要砍价</view>
+  <view class='content_wrap'>
+    <view class='wrap_title'>好友砍价榜</view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+    <view class='wrap_list'>
+      <image class='list_val' src='http://class.zzvlm.com/timg@2x.png'></image>
+      <text class='list_name'>朱萧木</text>
+      <text class='list_price'>1.00</text>
+    </view>
+
+  </view>
+</view>
+<view class='bottom'>
+  <view class='button_group margin0'>查看订单</view>
+</view>
+
+<view class='mask'>
+  <view class='mask_content'>
+    <view class='share_group'>
+      <view class='share_code'></view>
+      <text class='share_title'>扫码帮我</text>
+      <text class='share_mintitle'>砍价</text>
+    </view>
+    <view class='share_res'>
+
+      <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
+      <view class='top_res'>
+        <view class='top_res_title'>
+          <text class='top_res_name'>朱萧木</text>
+          <text class='top_res_label'>卓越</text>
+          <text class='top_res_label'>卓越</text>
+        </view>
+        <view class='top_res_detail'>天津工业大学 · 环境监测</view>
+      </view>
+    </view>
+  </view>
+  <view class='button_group' style='margin-top:100rpx'>保存图片</view>
+</view>

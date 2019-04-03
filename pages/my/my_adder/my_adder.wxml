@@ -1,0 +1,10 @@
+<view class="list">
+    <input class='list_ipt' placeholder='输入地址'></input>
+</view>
+<view class="list">
+    <text class='title'>定位</text>
+    <text class='iconfont icon-arr-right-red'></text>
+</view>
+
+<view class='map'></view>
+<view class='buttom'>立即绑定</view>
