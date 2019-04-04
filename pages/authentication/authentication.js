@@ -5,16 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    mask:true
   },
-
+  hide_mask(){
+    this.setData({
+      mask:false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
   },
-
+  next(){
+    wx.navigateTo({
+      url: '/pages/certificate/certificate',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

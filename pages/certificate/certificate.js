@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    arr: [[{ type: 1, value: 2 }], [{ type: 2, value: 3 }]]
   },
 
   /**
@@ -21,7 +21,14 @@ Page({
   onReady: function () {
 
   },
-
+  next() {
+    wx.switchTab({
+      url: '/pages/my/my',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

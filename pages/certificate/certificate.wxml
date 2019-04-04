@@ -1,13 +1,14 @@
 <view class='step_group'>
   <view class='step '>1</view>
   <view class='line'></view>
-  <view class='step step_active'>2</view>
+  <view class='step'>2</view>
   <view class='line'></view>
-  <view class='step'>3</view>
+  <view class='step step_active'>3</view>
 </view>
 <view class='tip'>请上传荣誉证书(如有)</view>
-<view class='list'>
-  <text class=''></text>
+<view class='list borT'>
+  <text class='list_title'> 证书名称：</text>
+  <input class='inp' placeholder='请输入证书名称'></input>
 </view>
 <view class='up_wrap'>
   <block>
@@ -15,6 +16,6 @@
     <text class='title'>身份证正面</text>
   </block>
 </view>
-<view class='button'>
+<view class='button' bindtap='next'>
   下一步
 </view>

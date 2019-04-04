@@ -49,9 +49,26 @@ page {
   font-size: 26rpx;
   text-decoration: underline;
 }
-
+.list{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.list_title{
+  font-size: 32rpx;
+  color: rgba(44, 44, 44, 1);
+}
+.inp{
+  width: 490rpx;
+  height: 100%;
+  font-size: 32rpx;
+  /* color: rgba(153, 153, 153, 1); */
+}
 .button {
-  width: 688rpx;
+  width: 688rpx; 
   height: 88rpx;
   background: rgba(96, 234, 243, 1);
   border-radius: 8rpx;

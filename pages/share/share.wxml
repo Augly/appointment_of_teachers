@@ -1,8 +1,8 @@
 <image class='share_logo' src='http://class.zzvlm.com/2017041969914926076563635@2x.png'></image>
 
-<view class='button'>生成图片</view>
+<view class='button' bindtap='show_mask'>生成图片</view>
 
-<view class='mask'>
+<view class='mask' wx:if="{{mask}}">
   <view class='mask_content'>
     <view class='share_group'>
       <image class='share_code' src='http://class.zzvlm.com/2017041969914926076563635@2x.png'></image>

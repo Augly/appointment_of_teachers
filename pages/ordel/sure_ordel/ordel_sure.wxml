@@ -1,8 +1,8 @@
 <view class="content">
     <image class='type_img' src='http://class.zzvlm.com/success122@2x.png'></image>
     <text class='type_title'>提交成功</text>
-    <text class='type_mintitle'>您已成功提交订单，请等待对方接单</text>
-    <view class='button_group top100'>找人砍价</view>
-    <view class='button_group'>查看订单</view>
-    <view class='button_return'>返回首页</view>
+    <text class='type_mintitle'>您已成功提交打卡信息，开始耐心辅导功课吧！</text>
+    <!-- <view class='button_group top100'>找人砍价</view> -->
+    <view class='button_group' bindtap='look_res'>查看详情</view>
+    <view class='button_return' bindtap='return_index'>返回首页</view>
 </view>

@@ -14,7 +14,54 @@ Page({
   onLoad: function (options) {
 
   },
-
+  to_wallet() {
+    wx.navigateTo({
+      url: '/pages/wallet/wallet',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  to_share(){
+    wx.navigateTo({
+      url: '/pages/share/share',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  to_feed_back() {
+    wx.navigateTo({
+      url: '/pages/feed_back/feed_back',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  to_my_details() {
+    wx.navigateTo({
+      url: '/pages/my/my_details/my_details',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  to_about_us() {
+    wx.navigateTo({
+      url: '/pages/my/about_us/about_us',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  to_ordel() {
+    wx.switchTab({
+      url: '/pages/ordel/ordel',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

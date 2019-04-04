@@ -1,17 +1,24 @@
 {
   "pages": [
-    "pages/certificate/certificate",
+    "pages/ordel/ordel",
+    "pages/share/share",
+    "pages/income_details/income_details",
+    "pages/income/income",
     "pages/authentication/authentication",
+    "pages/certificate/certificate",
+    
+   
+    
     "pages/information/information",
     "pages/ordel/ordel_res/ordel_res",
     "pages/my/my_details/my_details",
-    "pages/income_details/income_details",
-    "pages/income/income",
+    
+    
     "pages/wallet/wallet",
     "pages/index/teacher_index/teacher_index",
-    "pages/share/share",
+    
     "pages/my/my",
-    "pages/ordel/ordel",
+    
     "pages/index/index",
     "pages/teacher/teacher",
     "pages/evaluate/evaluate",

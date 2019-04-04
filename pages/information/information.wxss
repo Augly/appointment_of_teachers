@@ -43,7 +43,8 @@ page {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  border-radius:50%; 
+  background-color: rgba(204, 204, 204, 1);
   margin: 0 auto;
   margin-top: 64rpx;
 }
@@ -60,7 +61,7 @@ page {
   left: 120rpx;
   width: 48rpx;
   height: 48rpx;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .mintitle {

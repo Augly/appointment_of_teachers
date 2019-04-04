@@ -1,4 +1,4 @@
-<view class='list borT'>
+<view class='list borT' bindtap='list_detail'>
     <view class='list_head'>
       <text class='list_head_title'>周五</text>
       <text class='list_head_mintitle'>10-12</text>

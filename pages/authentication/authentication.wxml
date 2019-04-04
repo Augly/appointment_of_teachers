@@ -21,11 +21,11 @@
     <text class='title'>身份证反面</text>
   </block>
 </view>
-<view class='button'>
+<view class='button' bindtap='next'>
 下一步
 </view>
 
-<view class='mask'>
+<view class='mask' wx:if="{{mask}}" bindtap='hide_mask'>
   <view class='mask_tip'></view>
   <view class='mask_tip'></view>
   <view class='mask_title'>拍照规范示意</view>
