@@ -1,4 +1,5 @@
 // pages/ordel/ordel_res/ordel_res.js
+const config=require('../../../utils/util.js')
 Page({
 
   /**
@@ -14,7 +15,14 @@ Page({
   onLoad: function (options) {
 
   },
-
+  //隐藏此单
+  hide_ordel(){
+    config.mytoast('隐藏此单')
+  },
+  //立即接单
+  sure_ordel(){
+    config.mytoast('立即接单')
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

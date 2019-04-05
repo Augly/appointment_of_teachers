@@ -1,26 +1,26 @@
 <view class="content">
 
   <view class='list_wrap'>
-    <view class='list list_val'>
+    <view class='list list_val' bindtap='user_val'>
       <text class='title'>头像</text>
       <image src='http://class.zzvlm.com/timg@2x.png' class='val_logo'></image>
     </view>
-    <view class='list'>
+    <view class='list' bindtap='user_name'>
       <text class='title'>昵称</text>
       <input class='mintitle' placeholder='请输入昵称'></input>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
-    <view class='list'>
+    <view class='list' bindtap='bind_phone'>
       <text class='title'>手机号</text>
       <input class='mintitle' placeholder='请输入手机号'></input>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
-    <view class='list '>
+    <view class='list ' bindtap='user_sex'>
       <text class='title'>性别</text>
       <text class='mintitle'>女</text>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
-    <view class='list'>
+    <view class='list' bindtap='user_age'>
       <text class='title'>年龄</text>
       <text class='mintitle'>请选择</text>
       <text class='iconfont icon-arr-right-red'></text>
@@ -33,13 +33,13 @@
     </view>
   </view>
 </view>
-<view class='list_wrap' style='margin-top:16rpx;'>
-  <view class='list'>
+<view class='list_wrap' style='margin-top:16rpx;' >
+  <view class='list' bindtap='to_adder'>
     <text class='title'>我的地址</text>
     <text class='mintitle'>河西区友谊路萧...</text>
     <text class='iconfont icon-arr-right-red'></text>
   </view>
-  <view class='list'>
+  <view class='list' bindtap='rz'>
     <text class='title'>我的认证</text>
     <!-- <text class='mintitle'>河西区友谊路萧...</text> -->
     <text class='iconfont icon-arr-right-red'></text>

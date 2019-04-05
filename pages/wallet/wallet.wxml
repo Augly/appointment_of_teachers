@@ -7,4 +7,4 @@
 <view class='tip'>账户余额(元)</view>
 <view class='tipR'>订单总收益：52010元</view>
 <view class='tipR'>分销总收益：52010元</view>
-<view  class='button'>提现</view>
+<view  class='button' bindtap='tx'>提现</view>

@@ -54,6 +54,6 @@
 </view>
 
 <view class='bottom_group'>
-  <view class='cendel'>隐藏此单</view>
-  <view class='payed'>立即接单</view>
+  <view class='cendel' bindtap='hide_ordel'>隐藏此单</view>
+  <view class='payed' bindtap='sure_ordel'>立即接单</view>
 </view>

@@ -1,4 +1,5 @@
 // pages/ordel/ordel.js
+const config=require('../../utils/util.js')
 Page({
 
   /**
@@ -17,6 +18,19 @@ Page({
   onLoad: function (options) {
 
   },
+  //隐藏此单
+  hide_ordel(){
+    config.mytoast('隐藏此单')
+  },
+  //取消此单
+  cendel_ordel(){
+    config.mytoast('取消此单')
+  },
+  //立即接单
+  sure_ordel(){
+    config.mytoast('立即接单')
+  },
+  //
   up_ok(){
     wx.navigateTo({
       url: '/pages/ordel/sure_ordel/ordel_sure',

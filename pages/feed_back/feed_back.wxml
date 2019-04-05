@@ -1,10 +1,9 @@
 <view class="content">
   <view class='text_wrap borT'>
-    <textarea placeholder='写下您的意见' maxlength='120'></textarea>
-    <text class='tip'>120/120字</text>
+    <textarea placeholder='写下您的意见' maxlength='120' bindinput='get_text'></textarea>
+    <text class='tip'>{{cursor}}/120字</text>
   </view>
-
-    <image class='up_img' src='http://class.zzvlm.com/img3418@2x.png'></image>
+    <image class='up_img' src='{{imgurl}}' bindtap='up_img'></image>
 </view>
 
-<view class='button'>提交反馈</view>
+<view class='button' bindtap='sure'>提交反馈</view>

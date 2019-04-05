@@ -1,4 +1,5 @@
 // pages/my/my.js
+const config=require('../../utils/util.js')
 Page({
 
   /**
@@ -89,7 +90,9 @@ Page({
   onUnload: function () {
 
   },
-
+  call(){
+    config.mytoast('打电话')
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

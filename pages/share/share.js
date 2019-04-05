@@ -7,7 +7,12 @@ Page({
   data: {
     mask:false
   },
-
+  //保存图片
+  save_pic(){
+    this.setData({
+      mask:false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

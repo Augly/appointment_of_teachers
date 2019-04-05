@@ -28,9 +28,9 @@
       <text class='adder_distance'>2.4KM</text>
     </view>
     <view class='scope_group'>
-      <view class='scope_normel_button' wx:if="{{tabindex==0}}">隐藏此单</view>
-      <view class='scope_normel_button' wx:if="{{tabindex==1}}">取消订单</view>
-      <view class='scope_normel_button button_active' wx:if="{{tabindex==0}}">立即接单</view>
+      <view class='scope_normel_button' wx:if="{{tabindex==0}}" catchtap='hide_ordel'>隐藏此单</view>
+      <view class='scope_normel_button' wx:if="{{tabindex==1}}" catchtap='cendel_ordel'>取消订单</view>
+      <view class='scope_normel_button button_active' wx:if="{{tabindex==0}}" catchtap='sure_ordel'>立即接单</view>
       <view class='scope_normel_button button_active' wx:if="{{tabindex==1}}" catchtap='dk'>打卡工作</view>
     </view>
   </view>

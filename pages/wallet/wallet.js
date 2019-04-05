@@ -1,4 +1,5 @@
 // pages/wallet/wallet.js
+const config=require('../../utils/util.js')
 Page({
 
   /**
@@ -7,7 +8,10 @@ Page({
   data: {
 
   },
-
+  //提现
+  tx(){
+    config.mytoast('发起提现')
+  },
   /**
    * 生命周期函数--监听页面加载
    */

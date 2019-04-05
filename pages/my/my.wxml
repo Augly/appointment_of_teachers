@@ -52,5 +52,5 @@
     <text class='list_item_title'>分享</text>
     <text class='iconfont icon-arr-right-red'></text>
   </view>
-  <image class='call_group' src='http://class.zzvlm.com/call@2x.png'></image>
+  <image class='call_group' src='http://class.zzvlm.com/call@2x.png' bindtap='call'></image>
 </view>

@@ -1,11 +1,14 @@
 // pages/feed_back/feed_back.js
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgurl: 'http://class.zzvlm.com/img3418@2x.png',
+    cursor: 0,
+    value: ''
   },
 
   /**
@@ -21,7 +24,24 @@ Page({
   onReady: function () {
 
   },
-
+  //上传图片
+  up_img() {
+    config.chooseImage((res) => {
+      this.setData({
+        imgurl: res.tempFilePaths
+      })
+    })
+  },
+  //获取文字
+  get_text(e) {
+    this.setData({
+      cursor: e.detail.cursor,
+      value: e.detail.value
+    })
+  },
+  sure() {
+    config.mytoast('提交成功!')
+  },
   /**
    * 生命周期函数--监听页面显示
    */

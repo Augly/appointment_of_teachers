@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/ordel/ordel",
     "pages/share/share",
     "pages/income_details/income_details",
@@ -20,13 +21,13 @@
     "pages/my/my",
     
     "pages/index/index",
-    "pages/teacher/teacher",
+    
     "pages/evaluate/evaluate",
     "pages/feed_back/feed_back",
     "pages/my/about_us/about_us",
     "pages/my/my_adder/my_adder",
     "pages/bind_phone/bind_phone",
-    "pages/login/login",
+   
     "pages/my/my_teacher/my_teacher",
     
     
