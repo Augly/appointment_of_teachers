@@ -1,9 +1,15 @@
-@font-face {font-family: "iconfont";
+@font-face {
+  font-family: "iconfont";
   src: url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.eot?t=1554112773950'); /* IE9 */
-  src: url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.eot?t=1554112773950#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.woff?t=1554112773950') format('woff'),
-  url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.ttf?t=1554112773950') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.svg?t=1554112773950#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.eot?t=1554112773950#iefix') format('embedded-opentype'),
+         /* IE6-IE8 */ url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.woff?t=1554112773950') format('woff'),
+         url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.ttf?t=1554112773950') format('truetype'),
+         /* chrome,
+         firefox,
+         opera,
+         Safari,
+         Android,
+         iOS 4.2+ */ url('//at.alicdn.com/t/font_1118667_lue1eiy3kx.svg?t=1554112773950#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -142,9 +148,19 @@
   content: "\e60a";
 }
 
-
-
 .borT {
   border-bottom: 2rpx solid rgba(96, 234, 243, 1);
+}
+
+button {
+  border-radius: 0;
+}
+
+button {
+  border: 0;
+}
+
+button::after {
+  border: none;
 }
 @import "/utils/zero_Animation";

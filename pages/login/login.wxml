@@ -1,5 +1,8 @@
 <view class="content">
-    <input class='ipt_group' placeholder='用户名' placeholder-class='colorBlue' bindinput='get_user' data-type="user_name"></input>
-    <input class='ipt_group' placeholder='密码' placeholder-class='colorBlue' bindinput='get_user' data-type="user_password"></input>
-    <view class='button' bindtap='to_index'>登 陆</view>
+  <input class='ipt_group' placeholder='请输入手机号' type='number' placeholder-class='colorBlue' bindinput='get_user' data-type="user_phone"></input>
+  <view class='codeWrap'>
+    <input class='ipt_group_passworld' placeholder='请输入验证码' placeholder-class='colorBlue' bindinput='get_user' data-type="user_password"></input>
+    <view class='code' bindtap='send_code'>{{code_type}}</view>
+  </view>
+  <button class='button'  open-type="getUserInfo" bindgetuserinfo="getUserInfo" lang='zh_CN'>登 陆</button>
 </view>
