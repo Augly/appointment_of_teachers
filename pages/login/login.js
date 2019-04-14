@@ -1,5 +1,6 @@
 // pages/login/login.js
 const config = require('../../utils/util.js')
+let app = getApp()
 Page({
 
   /**
@@ -8,18 +9,24 @@ Page({
   data: {
     user_phone: '',
     user_password: '',
-    code_type: '验证码'
+    code_type: '验证码',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
 
+  },
+  get_userInfo() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/user_info', res => {
+      wx.setStorageSync('userInfo', res.data.data)
+    })
   },
   //获取用户信息
   getUserInfo(res) {
-    console.log(res)
     this.to_index()
   },
   //发送验证码
@@ -37,17 +44,17 @@ Page({
         })
         let st = setInterval(() => {
           let n = this.data.code_type--
-            if (n == 1) {
-              this.setData({
-                code_type: '验证码'
-              })
-              clearInterval(st)
-            } else {
-              n--
-              this.setData({
-                code_type: n
-              })
-            }
+          if (n == 1) {
+            this.setData({
+              code_type: '验证码'
+            })
+            clearInterval(st)
+          } else {
+            n--
+            this.setData({
+              code_type: n
+            })
+          }
         }, 1000)
       })
 
@@ -56,14 +63,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
   //获取用户名和密码
@@ -97,55 +104,48 @@ Page({
       phone: this.data.user_phone,
       code: this.data.user_password
     }, '/login/user_login', res => {
-      wx.setStorage({
-        key: 'user_token',
-        data: res.data.data.user_token,
-        success: function(res) {
-          wx.switchTab({
-            url: '/pages/ordel/ordel',
-            success: function(res) {},
-            fail: function(res) {},
-            complete: function(res) {},
-          })
-        },
-        fail: function(res) {},
-        complete: function(res) {}
+      wx.setStorageSync('user_token', res.data.data.user_token)
+      this.get_userInfo()
+      wx.switchTab({
+        url: '/pages/ordel/ordel',
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
       })
-
     })
   },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

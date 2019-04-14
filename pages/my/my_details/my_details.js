@@ -6,36 +6,109 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: null,
+    sex_index: 0,
+    age_index: 0,
+    age_list: [],
+    sex_list: [{
+      label: '男',
+      value: 1
+    }, {
+      label: '女',
+      value: 2
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.get_userInfo()
+    var s = []
+    for (let n = 0; n < 100; n++) {
+      s.push({
+        label: n + '岁',
+        value: n
+      })
+    }
+    this.setData({
+      age_list: s
+    })
+  },
+  //选择性别
+  bindchange(e) {
+    console.log(e)
+    this.setData({
+      sex_index: e.detail.value
+    })
+  },
+  //选择年龄
+  bindageChange(e) {
+    console.log(e)
+    this.setData({
+      age_index: e.detail.value
+    })
+  },
+  //获取个人信息
+  get_userInfo() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/user_info', res => {
+      wx.setStorageSync('userInfo', res.data.data)
+      this.setData({
+        userInfo: res.data.data,
+        sex_index: res.data.data.user_sex-1,
+        age_index: res.data.data.user_age
+      })
+    })
   },
   user_val() {
-    config.mytoast('点此换头像')
+    config.chooseImage(res => {
+      config.ajax('img', {
+        token: wx.getStorageSync('user_token')
+      }, '/user/upload_img', succes => {
+        var userInfo = this.data.userInfo
+        userInfo.user_portrait = succes.data.path
+        this.setData({
+          userInfo: userInfo
+        })
+      }, error => {
+        console.log(error)
+      }, complete => {
+        console.log(complete)
+      }, res.tempFilePaths[0])
+    })
   },
-  user_name() {
-    config.mytoast('点此编辑昵称')
+  userName(e) {
+    var userInfo = this.data.userInfo
+    userInfo.user_nickname = e.detail.value
+    this.setData({
+      userInfo: userInfo
+    })
   },
-  user_sex() {
-    config.mytoast('点此更改性别')
+  bindadder(e) {
+    var userInfo = this.data.userInfo
+    userInfo.user_address = e.detail.value
+    this.setData({
+      userInfo: userInfo
+    })
   },
-  user_age() {
-    config.mytoast('点此换年龄')
-  },
-  out() {
-    config.mytoast('点此退出')
-  },
-  rz(){
-    wx.navigateTo({
-      url: '/pages/index/teacher_index/teacher_index',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+  //保存个人信息
+  save() {
+    config.ajax('POST', {
+      nickname: this.data.userInfo.user_nickname,
+      sex: this.data.sex_list[this.data.sex_index].value,
+      age: this.data.age_list[this.data.age_index].value,
+      address: this.data.userInfo.user_address,
+      portrait: this.data.userInfo.user_portrait,
+      token: wx.getStorageSync('user_token')
+    }, '/user/user_info_update', res => {
+      this.get_userInfo()
+      config.mytoast('修改成功!即将返回', res => {
+        setTimeout((res) => {
+          wx.navigateBack(-1)
+        }, 1000)
+      })
     })
   },
   bind_phone() {

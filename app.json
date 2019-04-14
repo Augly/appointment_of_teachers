@@ -1,10 +1,15 @@
 {
   "pages": [
-    "pages/login/login",
+    "pages/my/my_adder/my_adder",
     "pages/ordel/ordel",
+    "pages/login/login",
+    "pages/my/my",
+    
+    
     "pages/share/share",
     "pages/income_details/income_details",
     "pages/income/income",
+    "pages/wallet/wallet",
     "pages/authentication/authentication",
     "pages/certificate/certificate",
     
@@ -15,17 +20,17 @@
     "pages/my/my_details/my_details",
     
     
-    "pages/wallet/wallet",
+    
     "pages/index/teacher_index/teacher_index",
     
-    "pages/my/my",
+    
     
     "pages/index/index",
     
     "pages/evaluate/evaluate",
     "pages/feed_back/feed_back",
     "pages/my/about_us/about_us",
-    "pages/my/my_adder/my_adder",
+    
     "pages/bind_phone/bind_phone",
    
     "pages/my/my_teacher/my_teacher",

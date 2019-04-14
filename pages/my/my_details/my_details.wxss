@@ -29,6 +29,7 @@ page {
 .val_logo {
   width: 122rpx;
   height: 122rpx;
+  border-radius:50%; 
 }
 
 .white {

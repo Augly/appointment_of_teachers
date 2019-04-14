@@ -1,12 +1,14 @@
 // pages/my/my.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo: null,
+    ordel_count: 0,
+    user_balance: 0
   },
 
   /**
@@ -14,6 +16,36 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  //获取个人信息
+  get_userInfo() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/user_info', res => {
+      this.setData({
+        userInfo: res.data.data
+      })
+    })
+  },
+  //获取订单数量
+  get_ordel_count() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/my_order_count', res => {
+      this.setData({
+        ordel_count: res.data.data.order_count
+      })
+    })
+  },
+  //获取我的钱包
+  get_balance() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/my_balance', res => {
+      this.setData({
+        user_balance: res.data.data.user_balance
+      })
+    })
   },
   to_wallet() {
     wx.navigateTo({
@@ -23,12 +55,12 @@ Page({
       complete: function (res) { },
     })
   },
-  to_share(){
+  to_share() {
     wx.navigateTo({
       url: '/pages/share/share',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   to_feed_back() {
@@ -75,6 +107,12 @@ Page({
    */
   onShow: function () {
 
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
+    this.get_userInfo()
+    this.get_balance()
+    this.get_ordel_count()
   },
 
   /**
@@ -90,7 +128,7 @@ Page({
   onUnload: function () {
 
   },
-  call(){
+  call() {
     config.mytoast('打电话')
   },
   /**

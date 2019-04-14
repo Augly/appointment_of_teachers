@@ -3,7 +3,7 @@
     <textarea placeholder='写下您的意见' maxlength='120' bindinput='get_text'></textarea>
     <text class='tip'>{{cursor}}/120字</text>
   </view>
-    <image class='up_img' src='{{imgurl}}' bindtap='up_img'></image>
+    <image class='up_img' src='{{img==""?imgurl:img}}' bindtap='up_img'></image>
 </view>
 
 <view class='button' bindtap='sure'>提交反馈</view>

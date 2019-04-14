@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    user_balance:0
   },
   //提现
   tx(){
@@ -17,6 +17,16 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  //获取我的钱包
+  get_balance() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/my_balance', res => {
+      this.setData({
+        user_balance: res.data.data.user_balance
+      })
+    })
   },
   to_detail(){
     wx.navigateTo({
@@ -37,7 +47,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.get_balance()
   },
 
   /**

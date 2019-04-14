@@ -1,10 +1,10 @@
 <view class='title_group' bindtap='to_detail'>
-  分享多点赚收益 <text class='iconfont icon-arr-right-red'></text>
+  账户明细<text class='iconfont icon-arr-right-red'></text>
 </view>
 
 <image class='logo' src='http://class.zzvlm.com/3529@2x.png'></image>
-<view class='money'>¥704.00</view>
+<view class='money'>¥{{user_balance}}</view>
 <view class='tip'>账户余额(元)</view>
-<view class='tipR'>订单总收益：52010元</view>
-<view class='tipR'>分销总收益：52010元</view>
+<!-- <view class='tipR'>订单总收益：52010元</view> -->
+<!-- <view class='tipR'>分销总收益：52010元</view> -->
 <view  class='button' bindtap='tx'>提现</view>

@@ -249,125 +249,64 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   if (Type == "POST") {
     methonType = "application/x-www-form-urlencoded"
   }
-  if (url != '/login/user_login' && url != '/login/send_message') {
-    wx.getStorage({
-      key: 'user_token',
+  wx.showLoading({
+    title: '数据加载中',
+    mask: true,
+    success: function (res) { },
+    fail: function (res) { },
+    complete: function (res) { },
+  })
+  if (Type != 'img') {
+    wx.request({
+      url: https + url,
+      method: Type,
+      header: {
+        'content-type': methonType,
+      },
+      data: params,
       success: (res) => {
-        console.log(res)
-        wx.showLoading({
-          title: '数据加载中',
-          mask: true,
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
-        })
-        if (Type != 'img') {
-          wx.request({
-            url: https + url,
-            method: Type,
-            header: {
-              'content-type': methonType,
-            },
-            data: params,
-            success: (res) => {
-              wx.hideLoading()
-              if (res.data.code == 1) {
-                successData(res)
-              } else {
-                mytoast(res.data.msg)
-                if (res.data.code == -1) {
-                  wx.clearStorage('user_token')
-                  wx.redirectTo({
-                    url: '/pages/doctor/login/login',
-                    success: function (res) { },
-                    fail: function (res) { },
-                    complete: function (res) { },
-                  })
-                }
-              }
-            },
-            error(res) {
-              if (errorData) {
-                errorData(res)
-              }
-            },
-            complete(res) {
-              if (completeData) {
-                completeData(res)
-              }
-            }
+        wx.hideLoading()
+        if (res.data.code == 1) {
+          successData(res)
+        } else if (res.data.code == -1) {
+          //登陆超时
+          mytoast('登陆超时')
+          wx.clearStorage('user_token')
+          wx.redirectTo({
+            url: '/pages/login/login',
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
           })
         } else {
-          if (imgurl) {
-            wx.uploadFile({
-              url: https + url,
-              filePath: imgurl,
-              name: 'image',
-              formData: params,
-              success: (res) => {
-                wx.hideLoading()
-                var data = JSON.parse(res.data)
-                if (data.code == 1) {
-                  successData(data)
-                } else {
-                  mytoast(data.msg)
-                }
-              },
-              error(res) {
-                if (errorData) {
-                  errorData(res)
-                }
-              },
-              complete(res) {
-                if (completeData) {
-                  completeData(res)
-                }
-              }
-            })
-          }
-
+          mytoast(res.data.msg)
         }
       },
-      fail: (res) => {
-        wx.redirectTo({
-          url: '/pages/doctor/login/login',
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
-        })
+      error(res) {
+        if (errorData) {
+          errorData(res)
+        }
+      },
+      complete(res) {
+        if (completeData) {
+          completeData(res)
+        }
       }
     })
-  }else{
-    wx.showLoading({
-      title: '数据加载中',
-      mask: true,
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
-    if (Type != 'img') {
-      wx.request({
+  } else {
+    if (imgurl) {
+      wx.uploadFile({
         url: https + url,
-        method: Type,
-        header: {
-          'content-type': methonType,
-        },
-        data: params,
+        filePath: imgurl,
+        name: 'image',
+        formData: params,
         success: (res) => {
           wx.hideLoading()
-          if (res.data.code == 1) {
-            successData(res)
+          var data = JSON.parse(res.data)
+          if (data.code == 1) {
+            successData(data)
           } else {
-            mytoast(res.data.msg)
-            if (res.data.code == -1) {
-              wx.clearStorage('user_token')
-              wx.redirectTo({
-                url: '/pages/doctor/login/login',
-                success: function (res) { },
-                fail: function (res) { },
-                complete: function (res) { },
-              })
-            }
+            mytoast(data.msg)
           }
         },
         error(res) {
@@ -381,40 +320,9 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
           }
         }
       })
-    } else {
-      if (imgurl) {
-        wx.uploadFile({
-          url: https + url,
-          filePath: imgurl,
-          name: 'image',
-          formData: params,
-          success: (res) => {
-            wx.hideLoading()
-            var data = JSON.parse(res.data)
-            if (data.code == 1) {
-              successData(data)
-            } else {
-              mytoast(data.msg)
-            }
-          },
-          error(res) {
-            if (errorData) {
-              errorData(res)
-            }
-          },
-          complete(res) {
-            if (completeData) {
-              completeData(res)
-            }
-          }
-        })
-      }
-
     }
+
   }
-
-
-
 };
 
 //导出模块

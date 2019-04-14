@@ -7,6 +7,7 @@ Page({
    */
   data: {
     imgurl: 'http://class.zzvlm.com/img3418@2x.png',
+    img: '',
     cursor: 0,
     value: ''
   },
@@ -27,9 +28,17 @@ Page({
   //上传图片
   up_img() {
     config.chooseImage((res) => {
-      this.setData({
-        imgurl: res.tempFilePaths
-      })
+      config.ajax('img', {
+        token: wx.getStorageSync('user_token')
+      }, '/user/upload_img', succes => {
+        this.setData({
+          img: 'http://yueke.dazhu-ltd.cn/public/uploads/' + succes.data.path
+        })
+      }, error => {
+        console.log(error)
+      }, complete => {
+        console.log(complete)
+      }, res.tempFilePaths[0])
     })
   },
   //获取文字
@@ -40,7 +49,18 @@ Page({
     })
   },
   sure() {
-    config.mytoast('提交成功!')
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      content: this.data.value,
+      img: [this.data.img]
+    }, '/user/suggestion_feedback', res => {
+      config.mytoast('反馈成功!', res => {
+        setTimeout(() => {
+          wx.navigateBack(-1)
+        }, 1500)
+      })
+    })
+
   },
   /**
    * 生命周期函数--监听页面显示

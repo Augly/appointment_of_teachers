@@ -1,10 +1,20 @@
 <view class="list">
-    <input class='list_ipt' placeholder='输入地址'></input>
+  <view class='list_head'>
+    <view class='list_title'>地址:</view>
+    <view class='list_res'>广东省广州市越秀区大南路2号 2603室</view>
+  </view>
+  <view class='list_scope'>
+    <view class='scope_left'>
+      <text class='iconfont icon-unxuanze'></text>
+      设为默认
+    </view>
+    <view class='scope_view'>
+      <text class='iconfont icon-bianji'></text>
+      编辑
+    </view>
+    <view class='scope_view'>
+      <text class='iconfont icon-shanchu'></text>
+      删除
+    </view>
+  </view>
 </view>
-<view class="list">
-    <text class='title'>定位</text>
-    <text class='iconfont icon-arr-right-red'></text>
-</view>
-
-<view class='map'></view>
-<view class='buttom'>立即绑定</view>
