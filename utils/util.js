@@ -236,6 +236,97 @@ function getData(e, name) {
 /**
  * 自定义request请求基类
  */
+function tajax(Type, params, url, successData, errorData, completeData, imgurl) {
+  var methonType = "application/json";
+  //访问的主域名
+  var https = "http://yueke.dazhu-ltd.cn/teacher"
+  if (Type === 'PUT') {
+    methonType = "application/x-www-form-urlencoded"
+  }
+  if (Type == 'FORM') {
+    methonType = "application/form-data"
+  }
+  if (Type == "POST") {
+    methonType = "application/x-www-form-urlencoded"
+  }
+  wx.showLoading({
+    title: '数据加载中',
+    mask: true,
+    success: function (res) { },
+    fail: function (res) { },
+    complete: function (res) { },
+  })
+  if (Type != 'img') {
+    wx.request({
+      url: https + url,
+      method: Type,
+      header: {
+        'content-type': methonType,
+      },
+      data: params,
+      success: (res) => {
+        wx.hideLoading()
+        if (res.data.code == 1) {
+          successData(res)
+        } else if (res.data.code == -1) {
+          //登陆超时
+          mytoast('登陆超时')
+          wx.clearStorage('user_token')
+          wx.redirectTo({
+            url: '/pages/login/login',
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        } else {
+          mytoast(res.data.msg)
+        }
+      },
+      error(res) {
+        if (errorData) {
+          errorData(res)
+        }
+      },
+      complete(res) {
+        if (completeData) {
+          completeData(res)
+        }
+      }
+    })
+  } else {
+    if (imgurl) {
+      wx.uploadFile({
+        url: https + url,
+        filePath: imgurl,
+        name: 'image',
+        formData: params,
+        success: (res) => {
+          wx.hideLoading()
+          var data = JSON.parse(res.data)
+          if (data.code == 1) {
+            successData(data)
+          } else {
+            mytoast(data.msg)
+          }
+        },
+        error(res) {
+          if (errorData) {
+            errorData(res)
+          }
+        },
+        complete(res) {
+          if (completeData) {
+            completeData(res)
+          }
+        }
+      })
+    }
+
+  }
+};
+/**
+ * 自定义request请求基类
+ */
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
@@ -329,6 +420,7 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
 module.exports = {
   https: https,
   ajax: ajax,
+  tajax: tajax,
   rem: rem,
   remW: remW,
   chooseImage: chooseImage,

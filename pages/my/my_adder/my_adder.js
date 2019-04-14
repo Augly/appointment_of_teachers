@@ -1,19 +1,28 @@
+const config=require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    page:1,
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.get_list()
   },
-
+  get_list(){
+    config.tajax('POST',{
+      token:wx.getStorageSync('user_token'),
+      page:this.data.page
+    },'/user/address_list',res=>{
+      console.log(res)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
