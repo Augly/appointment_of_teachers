@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.get_list()
+    
   },
   get_list(){
     config.tajax('POST',{
@@ -34,7 +34,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.get_list()
   },
 
   /**

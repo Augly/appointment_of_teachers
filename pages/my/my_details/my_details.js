@@ -119,6 +119,14 @@ Page({
       complete: function (res) { },
     })
   },
+  rz(){
+wx.navigateTo({
+  url: '/pages/information/information',
+  success: function(res) {},
+  fail: function(res) {},
+  complete: function(res) {},
+})
+  },
   to_adder() {
     wx.navigateTo({
       url: '/pages/my/my_adder/my_adder',

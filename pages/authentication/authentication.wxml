@@ -6,20 +6,22 @@
   <view class='step'>3</view>
 </view>
 <view class='tip'>手持身份证照片
-  <text class='tip_click'>查看拍照规范</text>
+  <text class='tip_click' bindtap='hide_mask'>查看拍照规范</text>
 </view>
 
-<view class='up_wrap'>
-  <block>
+<view class='up_wrap' bindtap='zm'>
+  <block wx:if="{{zm_id==''}}">
     <text class='iconfont icon-hao'></text>
     <text class='title'>身份证正面</text>
   </block>
+  <image src='{{zm_id}}' wx:else></image>
 </view>
-<view class='up_wrap'>
-  <block>
+<view class='up_wrap' bindtap='fm'>
+  <block wx:if="{{fm_id==''}}">
     <text class='iconfont icon-hao'></text>
     <text class='title'>身份证反面</text>
   </block>
+  <image src='{{fm_id}}' wx:else></image>
 </view>
 <view class='button' bindtap='next'>
 下一步

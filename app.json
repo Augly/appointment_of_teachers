@@ -1,48 +1,41 @@
 {
   "pages": [
-    "pages/my/my_adder/my_adder",
     "pages/ordel/ordel",
+    "pages/information/information",
+    "pages/certificate/certificate",
+    "pages/income/income",
+    "pages/my/my_adder/my_adder",
+    
     "pages/login/login",
     "pages/my/my",
     
     
     "pages/share/share",
     "pages/income_details/income_details",
-    "pages/income/income",
+    
     "pages/wallet/wallet",
     "pages/authentication/authentication",
-    "pages/certificate/certificate",
+    
     
    
     
-    "pages/information/information",
+    
     "pages/ordel/ordel_res/ordel_res",
     "pages/my/my_details/my_details",
     
     
     
     "pages/index/teacher_index/teacher_index",
-    
-    
-    
     "pages/index/index",
-    
     "pages/evaluate/evaluate",
     "pages/feed_back/feed_back",
     "pages/my/about_us/about_us",
-    
     "pages/bind_phone/bind_phone",
-   
     "pages/my/my_teacher/my_teacher",
-    
-    
     "pages/ordel/bargain/bargain",
     "pages/ordel/sure_ordel/ordel_sure",
     "pages/ordel/ordel_sure/ordel_sure",
     "pages/index/select_teacher/select_teacher"
-    
-    
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -50,6 +43,11 @@
     "navigationBarTitleText": "约课",
     "navigationBarTextStyle": "white"
   },
+    "permission": {
+      "scope.userLocation": {
+        "desc": "用于获取用户的地理位置"
+      }
+    },
   "tabBar": {
     "selectedColor": "#60EAF3",
     "list": [

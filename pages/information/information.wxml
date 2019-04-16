@@ -7,8 +7,8 @@
 </view>
 
 <view class='portrait_group'>
-  <image class='portrait'></image>
-  <image class='photo' src='http://class.zzvlm.com/pgon3834@2x.png'></image>
+  <image class='portrait' src='http://yueke.dazhu-ltd.cn/public/uploads/{{portrait}}'></image>
+  <image class='photo' src='http://class.zzvlm.com/pgon3834@2x.png' bindtap='user_val'></image>
 </view>
 
 <view class='mintitle'>
@@ -18,26 +18,30 @@
 <view class='list_wrap'>
   <view class='list borT'>
     <text class='list_title'>姓名：</text>
-    <input class='list_ipt' placeholder='请选择'></input>
+    <input class='list_ipt' placeholder='请填写姓名' bindinput='get_userName' value='{{name}}'></input>
   </view>
-  <view class='list borT'>
-    <text class='list_title'>性别：</text>
-    <view class='list_ipt disab'>请选择</view>
-    <text class='iconfont icon-arr-right-red'></text>
-  </view>
-  <view class='list borT'>
-    <text class='list_title'>年龄：</text>
-    <view class='list_ipt disab'>请选择</view>
-    <text class='iconfont icon-arr-right-red'></text>
-  </view>
+  <picker range="{{sex_list}}" range-key="label" bindchange='bindchange'>
+    <view class='list borT'>
+      <text class='list_title'>性别：</text>
+      <view class='list_ipt disab'>{{sex_list[sex_index].label}}</view>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+  </picker>
+  <picker range="{{age_list}}" range-key="label" bindchange='bindageChange'>
+    <view class='list borT'>
+      <text class='list_title'>年龄：</text>
+      <view class='list_ipt disab'>{{age_list[age_index].label}}</view>
+      <text class='iconfont icon-arr-right-red'></text>
+    </view>
+  </picker>
   <view class='list borT'>
     <text class='list_title'>院校：</text>
-    <input class='list_ipt' placeholder='请选择' value='天津工业大学'></input>
+    <input class='list_ipt' placeholder='请选择' value='{{school}}' bindinput='get_school'></input>
     <!-- <text class='iconfont icon-arr-right-red'></text> -->
   </view>
   <view class='list borT'>
     <text class='list_title'>专业：</text>
-    <input class='list_ipt' placeholder='请选择' value='环境工程'></input>
+    <input class='list_ipt' placeholder='请选择' value='{{major}}' bindinput='get_major'></input>
     <!-- <text class='iconfont icon-arr-right-red'></text> -->
   </view>
 </view>
@@ -47,19 +51,18 @@
     教学风格(三选一)
   </view>
   <view class='select_group'>
-    <view class='select_item'>幽默风趣</view>
-    <view class='select_item'>形象生动</view>
-    <view class='select_item'>活泼轻松</view>
+    <block wx:for="{{fg_list}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+      <view class="select_item {{fg_index==index?'select_class':''}}" bindtap='select_item' data-index='{{index}}'>{{item.label}}</view>
+    </block>
   </view>
   <view class='class_title'>
     教学科目(多选)
   </view>
   <view class='select_group'>
-    <text class='select_class'>化学</text>
-    <text class='select_class add'>+</text>
+    <text class="select_item {{item.check?'select_class':''}}"  wx:for="{{class_list}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}" bindtap='select_class' data-index='{{index}}'>{{item.subjects_name}}</text>
   </view>
 </view>
 
 <view class='button' bindtap='next'>
-下一步
+  下一步
 </view>

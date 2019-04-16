@@ -8,13 +8,14 @@
 <view class='tip'>请上传荣誉证书(如有)</view>
 <view class='list borT'>
   <text class='list_title'> 证书名称：</text>
-  <input class='inp' placeholder='请输入证书名称'></input>
+  <input class='inp' placeholder='请输入证书名称' bindinput='get_certificate' value='{{certificate}}'></input>
 </view>
 <view class='up_wrap'>
-  <block>
+  <block wx:if="{{certificate_img==''}}">
     <text class='iconfont icon-hao'></text>
     <text class='title'>身份证正面</text>
   </block>
+  <image src='{{certificate_img}}' wx:else></image>
 </view>
 <view class='button' bindtap='next'>
   下一步

@@ -2,18 +2,18 @@
    <view class="tabItem {{tabindex==index?'tabActive':''}}" wx:for="{{tab_list}}" wx:key='index' bindtap='select_tab' data-index='{{index}}'>{{item}}</view>
 </view>
 <view class='content'>
-  <view class='list' bindtap='to_res'>
+  <view class='list' bindtap='to_res' wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
     <view class='list_head borT'>
-      <image class='head_portrait' src='http://class.zzvlm.com/timg1@2x.png'></image>
-      <text class='head_name'>朱萧木</text>
-      <text class='head_time'>27分钟前</text>
-      <text class='head_ordel_money'>订单金额:￥100</text>
+      <image class='head_portrait' src='{{item.user_portrait}}'></image>
+      <text class='head_name'>{{item.user_nickname}}</text>
+      <text class='head_time'>{{item.order_reservetime}}</text>
+      <text class='head_ordel_money'>订单金额:￥{{item.order_money}}</text>
     </view>
     <view class='classInfo borT'>
       <view class='class_group'>
         <view class='class_name'>
-          <text class='title'>英语</text>
-          <text class='min_title'>初中一年级</text>
+          <text class='title'>{{item.subjects_name}}</text>
+          <text class='min_title'>{{item.grade_name}}</text>
         </view>
         <view class='line'></view>
         <view class='class_time'>
@@ -24,14 +24,16 @@
       <!-- <text class='ordert_type'>老师已接单，请付款</text> -->
     </view>
     <view class='adder_list borT'>
-      <text class='adder_title'>地址：天津市南开区宾水西道天穆园4栋201</text>
-      <text class='adder_distance'>2.4KM</text>
+      <text class='adder_title'>地址：{{item.order_address}}</text>
+      <text class='adder_distance'>{{item.distance}}KM</text>
     </view>
     <view class='scope_group'>
-      <view class='scope_normel_button' wx:if="{{tabindex==0}}" catchtap='hide_ordel'>隐藏此单</view>
+      <view class='scope_normel_button' wx:if="{{tabindex==0}}" catchtap='reject_order' data-id='{{item.order_id}}'>驳回此单</view>
       <view class='scope_normel_button' wx:if="{{tabindex==1}}" catchtap='cendel_ordel'>取消订单</view>
-      <view class='scope_normel_button button_active' wx:if="{{tabindex==0}}" catchtap='sure_ordel'>立即接单</view>
-      <view class='scope_normel_button button_active' wx:if="{{tabindex==1}}" catchtap='dk'>打卡工作</view>
+      <view class='scope_normel_button button_active' wx:if="{{tabindex==0}}" catchtap='receive_order' data-id='{{item.order_id}}'>立即接单</view>
+      <view class='scope_normel_button button_active' wx:if="{{tabindex==1}}" catchtap='dk' data-id='{{item.order_id}}'>打卡工作</view>
+       <view class='scope_normel_button' wx:if="{{tabindex==2}}">待评价</view>
+        <view class='scope_normel_button' wx:if="{{tabindex==3}}">已完成</view>
     </view>
   </view>
 </view>
@@ -56,7 +58,8 @@
   <block wx:if="{{type==4}}">
     <view class='dk_wrap'>
       <view class='imgRes'>
-        <image class='phone' src='http://class.zzvlm.com/pgon3834@2x.png'></image>
+        <image src='{{dk_img}}' class='imgRes_img'></image>
+        <image class='phone' src='http://class.zzvlm.com/pgon3834@2x.png' catchtap='up_val'></image>
       </view>
       <text class='dk_title'>打卡工作</text>
       <text class='dk_mintitle'>上传相关照片确认打卡</text>
