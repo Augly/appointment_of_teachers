@@ -9,6 +9,7 @@ Page({
     type: 4,
     mask: true,
     list: [],
+    page:1,
     tabindex: 0,
     dk_img: '',
     dk_id: '',

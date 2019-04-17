@@ -2,12 +2,12 @@
   <view class='head_name'>
     <view class='head_nameGroup'>
       <view class='name'>
-        <text class='name_title'>{{userInfo.user_nickname}}</text>
+        <text class='name_title'>{{userInfo.user_nickname?userInfo.user_nickname:'暂未登陆'}}</text>
         <!-- <text class='iconfont icon-bianji1'></text> -->
       </view>
       <!-- <text class='mintitle'>每天一斤酒赛过活神仙</text> -->
     </view>
-    <image class='portrait' src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.user_portrait}}'></image>
+     <image class='portrait' src="{{userInfo.user_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+userInfo.user_portrait:default_src}}"></image>
   </view>
   <view class='head_other'>
     <view class='otherItem' bindtap='to_ordel'>

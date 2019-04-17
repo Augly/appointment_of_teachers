@@ -236,7 +236,7 @@ function getData(e, name) {
 /**
  * 自定义request请求基类
  */
-function tajax(Type, params, url, successData, errorData, completeData, imgurl) {
+function tajax(Type, params, url, successData, nosuccessData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
   var https = "http://yueke.dazhu-ltd.cn/teacher"
@@ -280,6 +280,10 @@ function tajax(Type, params, url, successData, errorData, completeData, imgurl) 
           })
         } else {
           mytoast(res.data.msg)
+          if (nosuccessData){
+            nosuccessData(res)
+          }
+         
         }
       },
       error(res) {

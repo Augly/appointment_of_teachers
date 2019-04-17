@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
     userInfo: null,
     ordel_count: 0,
     user_balance: 0
