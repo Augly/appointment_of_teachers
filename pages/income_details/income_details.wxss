@@ -1,18 +1,21 @@
 page {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 32rpx 24rpx;
   background-color: rgba(223, 243, 250, 1);
 }
 
-.content{
+.content {
   width: 100%;
   height: 784rpx;
   background-color: rgba(255, 255, 255, 1);
-  border-radius:8rpx;
+  border-radius: 8rpx;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 24rpx;
 }
-.content_title{
+
+.content_title {
   font-size: 64rpx;
   color: rgba(44, 44, 44, 1);
   font-weight: bold;
@@ -20,40 +23,59 @@ page {
   margin: 0 auto;
   margin-top: 80rpx;
 }
-.content_mintitle{
+
+.content_mintitle {
   font-size: 24rpx;
   color: rgba(44, 44, 44, 0.8);
   text-align: center;
   margin: 0 auto;
   margin-bottom: 50rpx;
 }
-.list{
+
+.list {
   width: 100%;
   height: 94rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.list_title{
+
+.list_title {
   font-size: 28rpx;
   color: rgba(44, 44, 44, 1);
 }
-.list_mintitle{
+
+.list_mintitle {
   font-size: 28rpx;
   color: rgba(153, 153, 153, 1);
 }
-.marT50{
+
+.marT50 {
   margin-top: 50rpx;
 }
-.tip{
+
+.tip {
   font-size: 24rpx;
   color: rgba(51, 51, 51, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 60rpx;
 }
-.call_me{
+
+.call_me {
   font-size: 24rpx;
   color: rgba(96, 234, 243, 1);
 }

@@ -1,8 +1,15 @@
 .content {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -28,6 +35,7 @@
   width: 528rpx;
   height: 88rpx;
   border-radius: 8rpx;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(104, 227, 245, 1)), to(rgba(123, 235, 221, 1)));
   background: linear-gradient(90deg, rgba(104, 227, 245, 1) 0%, rgba(123, 235, 221, 1) 100%);
   margin-top: 40rpx;
   font-size: 32rpx;
@@ -35,9 +43,11 @@
   line-height: 88rpx;
   color: rgba(255, 255, 255, 1);
 }
-.top100{
+
+.top100 {
   margin-top: 100rpx;
 }
+
 .button_return {
   width: 528rpx;
   height: 88rpx;
