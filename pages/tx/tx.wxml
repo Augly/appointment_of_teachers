@@ -1,0 +1,16 @@
+<view class="content">
+  <view class='list marT170'>
+    <text class='title'>提现金额：</text>
+    <input class='ipt_group' value='{{tx_money}}' type='number' maxlength='11' placeholder='请输入提现金额' placeholder-class='' bindinput='get_money'></input>
+  </view>
+  <view class='list'>
+    <text class='title'>提现银行：</text>
+    <input class='ipt_group' placeholder='请输入验证码' value='{{tx_bankname}}' placeholder-class='' bindinput='get_bankname'></input>
+  </view>
+  <view class='list'>
+    <text class='title'>银行卡号：</text>
+    <input class='ipt_group' placeholder='请输入验证码' value='{{tx_bankcard}}' placeholder-class='' bindinput='get_bankcard'></input>
+  </view>
+</view>
+
+<view class='buttom' bindtap='right_tx'>立即提现</view>

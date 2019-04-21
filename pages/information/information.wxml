@@ -34,6 +34,13 @@
       <text class='iconfont icon-arr-right-red'></text>
     </view>
   </picker>
+  <picker bindchange="bindPickerChange" data-type='grade' value="{{grade_index}}" range="{{grade_list}}" range-key='grade_name'>
+      <view class='list borT'>
+        <text class='list_title'>年级：</text>
+        <view class='list_ipt disab'>{{grade_list[grade_index].grade_name}}</view>
+        <text class='iconfont icon-arr-right-red'></text>
+      </view>
+    </picker>
   <view class='list borT'>
     <text class='list_title'>院校：</text>
     <input class='list_ipt' placeholder='请选择' value='{{school}}' bindinput='get_school'></input>

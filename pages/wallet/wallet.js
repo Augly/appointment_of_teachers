@@ -10,7 +10,17 @@ Page({
   },
   //提现
   tx(){
-    config.mytoast('发起提现')
+    if (this.data.user_balance<1){
+      config.mytoast('账户余额不足以提现')
+    }else{
+      wx.navigateTo({
+        url: '/pages/tx/tx',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面加载

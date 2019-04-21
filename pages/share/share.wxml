@@ -3,45 +3,6 @@
 <view class='button' bindtap='show_mask'>生成图片</view>
 
 <view class='mask' wx:if="{{mask}}" bindtap='save_pic'>
-  <view class='mask_content'>
-    <view class='share_group'>
-      <image class='share_code' src='http://class.zzvlm.com/2017041969914926076563635@2x.png'></image>
-    </view>
-    <view class='share_res borT'>
-
-      <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
-      <view class='top_res'>
-        <view class='top_res_title'>
-          <text class='top_res_name'>朱萧木</text>
-          <text class='top_res_label'>卓越</text>
-          <text class='top_res_label'>卓越</text>
-        </view>
-        <view class='top_res_detail'>天津工业大学 · 环境监测</view>
-      </view>
-    </view>
-    <view class='class'>
-    <view class='class_title'>
-      <image class='class_logo' src='http://class.zzvlm.com/123551@2x.png'></image>
-      <text class='class_title_name'>优势学科</text>
-    </view>
-    <view class='class_kind'>
-      <view class='kind_list'>
-        语文
-      </view>
-      <view class='kind_list'>
-        语文
-      </view>
-      <view class='kind_list'>
-        语文
-      </view>
-      <view class='kind_list'>
-        语文
-      </view>
-      <view class='kind_list'>
-        语文
-      </view>
-    </view>
-  </view>
-  </view>
-  <view class='button_group' style='margin-top:100rpx' catchtap='save_pic'>保存图片</view>
+  <canvas canvas-id="myCanvas" id='myCanvas' class='mask_content'/>
+  <view class='button_group' style='margin-top:100rpx' catchtap='save'>保存图片</view>
 </view>

@@ -1,20 +1,23 @@
-<view class="list">
+<view class="list" wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
   <view class='list_head'>
-    <view class='list_title'>地址:</view>
-    <view class='list_res'>广东省广州市越秀区大南路2号 2603室</view>
+    <!-- <view class='list_title'>地址:</view> -->
+    <view class='list_res'>{{item.teacher_address_name}}</view>
   </view>
   <view class='list_scope'>
     <view class='scope_left'>
-      <text class='iconfont icon-unxuanze'></text>
+      <text class="iconfont  {{item.teacher_address_ispresent==1?'icon-unxuanze':'icon-xuanze'}}" bindtap='change' data-index='{{index}}'></text>
       设为默认
     </view>
-    <view class='scope_view'>
+    <!-- <view class='scope_view'>
       <text class='iconfont icon-bianji'></text>
       编辑
-    </view>
-    <view class='scope_view'>
+    </view> -->
+    <view class='scope_view' bindtap='del' data-index='{{index}}'>
       <text class='iconfont icon-shanchu'></text>
       删除
     </view>
   </view>
 </view>
+
+
+<view class='sumbit' bindtap='moveToLocation'>添 加 地 址</view>

@@ -1,18 +1,31 @@
 // pages/income/income.js
+const config=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.get_init()
+  },
+  //获取明细
+  get_init(){
+    config.ajax('POST',{
+      token:wx.getStorageSync('user_token')
+    },'/user/balance_detail',res=>{
+      this.setData({
+        list:res.data.data.map((item)=>{
+          item.user_balance_createtime = config.timeForm(item.user_balance_createtime).chatTime
+        })
+      })
+    })
   },
   list_detail(){
     wx.navigateTo({

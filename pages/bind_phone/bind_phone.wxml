@@ -1,14 +1,14 @@
 <view class="content">
   <view class='list marT170'>
     <text class='title'>手机号</text>
-    <input class='ipt_group' placeholder='' placeholder-class='colorBlue'></input>
-    <view class='code_wrap'>验证</view>
+    <input class='ipt_group' value='{{user_phone}}' type='number' maxlength='11' placeholder='请输入需要绑定的手机号' placeholder-class='colorBlue' bindinput='getphone'></input>
+    <view class='code_wrap' bindtap='send_code'>{{code_type}}</view>
   </view>
   <view class='list'>
     <text class='title'>验证码</text>
-    <input class='ipt_group' placeholder='' placeholder-class='colorBlue'></input>
+    <input class='ipt_group' placeholder='请输入验证码' value='{{user_code}}' placeholder-class='colorBlue' bindinput='get_code'></input>
     <!-- <view class='code_wrap'>验证</view> -->
   </view>
 </view>
 
-<view class='buttom'>立即绑定</view>
+<view class='buttom' bindtap='return_go'>立即绑定</view>

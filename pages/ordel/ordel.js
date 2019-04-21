@@ -7,7 +7,7 @@ Page({
    */
   data: {
     type: 4,
-    mask: true,
+    mask: false,
     list: [],
     page:1,
     tabindex: 0,
@@ -106,7 +106,7 @@ Page({
     config.ajax('img', {
       token: wx.getStorageSync('user_token')
     }, '/user/upload_img', succes => {
-      this.dk_success()
+      this.dk_success(succes)
     }, error => {
       console.log(error)
     }, complete => {
@@ -119,22 +119,23 @@ Page({
     //   complete: function (res) { },
     // })
   },
-  call_dk(id, longitude, latitude) {
+  call_dk(id, longitude, latitude,img) {
     config.tajax('POST', {
       token: wx.getStorageSync('user_token'),
       order_id: id,
       longitude: longitude,
-      latitude: latitude
+      latitude: latitude,
+      clock_img: img
     }, '/index/clock_order', succes => {
       config.mytoast('打卡成功!')
     })
   },
-  dk_success() {
+  dk_success(data) {
     wx.getLocation({
       type: 'gcj02 ',
       altitude: false,
       success: (res) => {
-        this.call_dk(this.data.dk_id, res.longitude, res.latitude)
+        this.call_dk(this.data.dk_id, res.longitude, res.latitude, data.data.path)
       },
       fail: (res) => {
 
@@ -194,19 +195,40 @@ Page({
     this.setData({
       tabindex: e.currentTarget.dataset.index
     })
-    if (this.data.tabindex == 0) {
-      this.get_order_receiving()
-    } else if (this.data.tabindex == 1) {
-      this.get_order_clock()
-    } else if (this.data.tabindex == 2) {
-      this.get_order_estimate()
-    } else {
-      this.get_order_accomplish()
-    }
+    this.get_status();
+  },
+  get_status(){
+    config.tajax('POST',{
+      token:wx.getStorageSync('user_token')
+    },'/check/audit_status',res=>{
+      console.log(res)
+      if (res.data.data.teacher_audit_status==2){
+        if (this.data.tabindex == 0) {
+          this.get_order_receiving()
+        } else if (this.data.tabindex == 1) {
+          this.get_order_clock()
+        } else if (this.data.tabindex == 2) {
+          this.get_order_estimate()
+        } else {
+          this.get_order_accomplish()
+        }
+      }else{
+        this.setData({
+          mask:true,
+          type: res.data.data.teacher_audit_status
+        })
+      }
+    })
   },
   hidemask() {
     this.setData({
       mask: false
+    })
+  },
+  rz(){
+    this.setData({
+      mask: true,
+      type: 5
     })
   },
   /**

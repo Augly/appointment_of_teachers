@@ -125,6 +125,10 @@ page {
   justify-content: center;
   margin-top: 65rpx;
 }
+.up_wrap image{
+  width: 100%;
+  height: 100%;
+}
 
 .icon-hao {
   font-size: 60rpx;

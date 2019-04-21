@@ -8,6 +8,8 @@ Page({
   data: {
     class_list:[],
     portrait:'',
+    grade_index:0,
+    grade_list: [],
     fg_index:0,
     name:'',
     school:'',
@@ -49,6 +51,38 @@ Page({
       age_list: s
     })
     this.getClass_list()
+    this.getGrade_lsit()
+  },
+  //年级列表
+  getGrade_lsit() {
+    config.ajax('POST', {}, '/index/grade_list', res => {
+      console.log(res.data.data)
+      this.setData({
+        grade_list: res.data.data
+      })
+    })
+  },
+  //选择器函数
+  bindPickerChange(e) {
+    switch (e.currentTarget.dataset.type) {
+      case "grade":
+        this.setData({
+          grade_index: e.detail.value
+        })
+        break;
+      case "class":
+        this.setData({
+          class_index: e.detail.value
+        })
+        break;
+      case "level":
+        this.setData({
+          level_index: e.detail.value
+        })
+        break;
+      default:
+
+    }
   },
   //上传图片
   user_val() {
@@ -158,6 +192,7 @@ Page({
       realname:this.data.name,
       sex: this.data.sex_list[this.data.sex_index].value,
       age: this.data.age_list[this.data.age_index].value,
+      grade: [this.data.grade_list[this.data.grade_index].grade_id],
       academy:this.data.school,
       major: this.data.major,
       subjects: arr

@@ -18,7 +18,7 @@ Page({
 
   },
   //获取证件名
-  get_certificate(){
+  get_certificate(e){
     this.setData({
       certificate: e.detail.value
     })

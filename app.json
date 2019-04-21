@@ -1,16 +1,19 @@
 {
   "pages": [
+    
     "pages/ordel/ordel",
+    "pages/tx/tx",
+    "pages/share/share",
+    "pages/my/my",
     "pages/information/information",
     "pages/certificate/certificate",
     "pages/income/income",
     "pages/my/my_adder/my_adder",
-    
     "pages/login/login",
-    "pages/my/my",
     
     
-    "pages/share/share",
+    
+    
     "pages/income_details/income_details",
     
     "pages/wallet/wallet",
@@ -26,7 +29,7 @@
     
     
     "pages/index/teacher_index/teacher_index",
-    "pages/index/index",
+   
     "pages/evaluate/evaluate",
     "pages/feed_back/feed_back",
     "pages/my/about_us/about_us",

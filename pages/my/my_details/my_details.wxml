@@ -3,30 +3,30 @@
   <view class='list_wrap'>
     <view class='list list_val' bindtap='user_val'>
       <text class='title'>头像</text>
-  <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.user_portrait}}' class='val_logo'></image>
+      <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.user_portrait}}' class='val_logo'></image>
     </view>
     <view class='list' bindtap='user_name'>
       <text class='title'>昵称</text>
-    <input class='mintitle' value='{{userInfo.user_nickname}}' bindinput='userName'></input>
+      <input class='mintitle' value='{{userInfo.user_nickname}}' bindinput='userName'></input>
       <!-- <text class='iconfont icon-arr-right-red'></text> -->
     </view>
     <view class='list' bindtap='bind_phone'>
-      <text class='title'>手机号</text>
-      <input class='mintitle' placeholder='请输入手机号'></input>
+      <text class='title'>更换手机号</text>
+      <text class='mintitle'>{{userInfo.user_phone}}</text>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
-  <picker range="{{sex_list}}" range-key="label" bindchange='bindchange'>
-      <view class='list' >
-    <text class='title'>性别</text>
-    <text class='mintitle'>{{sex_list[sex_index].label}}</text>
-  </view>
-  </picker>
-  <picker range="{{age_list}}" range-key="label" bindchange='bindageChange'>
-      <view class='list' >
-     <text class='title'>年龄</text>
-    <text class='mintitle'>{{age_list[age_index].label}}</text>
-  </view>
-  </picker>
+    <picker range="{{sex_list}}" range-key="label" bindchange='bindchange'>
+      <view class='list'>
+        <text class='title'>性别</text>
+        <text class='mintitle'>{{sex_list[sex_index].label}}</text>
+      </view>
+    </picker>
+    <picker range="{{age_list}}" range-key="label" bindchange='bindageChange'>
+      <view class='list'>
+        <text class='title'>年龄</text>
+        <text class='mintitle'>{{age_list[age_index].label}}</text>
+      </view>
+    </picker>
 
     <view class='list'>
       <text class='title'>紧急联系人(手机号)</text>
@@ -35,7 +35,7 @@
     </view>
   </view>
 </view>
-<view class='list_wrap' style='margin-top:16rpx;' >
+<view class='list_wrap' style='margin-top:16rpx;'>
   <view class='list' bindtap='to_adder'>
     <text class='title'>我的地址</text>
     <!-- <text class='mintitle'>河西区友谊路萧...</text> -->
