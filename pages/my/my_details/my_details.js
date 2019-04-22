@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    ex_name:'',
+    ex_phone:'',
     userInfo: null,
     sex_index: 0,
     age_index: 0,
@@ -38,7 +40,7 @@ Page({
   out() {
     config.ajax('POST', {
       token: wx.getStorageSync('user_token')
-    }, '/user/suggestion_feedback', res => {
+    }, '/user/login_out', res => {
       wx.clearStorage()
       wx.navigateTo({
         url: '/pages/login/login',
@@ -64,14 +66,14 @@ Page({
   },
   //获取个人信息
   get_userInfo() {
-    config.ajax('POST', {
+    config.tajax('POST', {
       token: wx.getStorageSync('user_token')
-    }, '/user/user_info', res => {
+    }, '/user/teacher_info', res => {
       wx.setStorageSync('userInfo', res.data.data)
       this.setData({
         userInfo: res.data.data,
-        sex_index: res.data.data.user_sex-1,
-        age_index: res.data.data.user_age
+        sex_index: res.data.data.teacher_sex-1,
+        age_index: res.data.data.teacher_age
       })
     })
   },
@@ -99,6 +101,20 @@ Page({
       userInfo: userInfo
     })
   },
+  get_ex_name(e) {
+    var userInfo = this.data.userInfo
+    userInfo.teacher_exigency_name = e.detail.value
+    this.setData({
+      userInfo: userInfo
+    })
+  },
+  get_ex_phone(e) {
+    var userInfo = this.data.userInfo
+    userInfo.teacher_exigency_phone = e.detail.value
+    this.setData({
+      userInfo: userInfo
+    })
+  },
   bindadder(e) {
     var userInfo = this.data.userInfo
     userInfo.user_address = e.detail.value
@@ -108,14 +124,16 @@ Page({
   },
   //保存个人信息
   save() {
-    config.ajax('POST', {
-      nickname: this.data.userInfo.user_nickname,
+    config.tajax('POST', {
+      realname: this.data.userInfo.teacher_realname,
       sex: this.data.sex_list[this.data.sex_index].value,
       age: this.data.age_list[this.data.age_index].value,
-      address: this.data.userInfo.user_address,
-      portrait: this.data.userInfo.user_portrait,
-      token: wx.getStorageSync('user_token')
-    }, '/user/user_info_update', res => {
+      // address: this.data.userInfo.user_address,
+      portrait: this.data.userInfo.teacher_portrait,
+      token: wx.getStorageSync('user_token'),
+      exigency_name: this.data.userInfo.teacher_exigency_name,
+      exigency_phone: this.data.userInfo.teacher_exigency_phone,
+    }, '/user/teacher_info_update', res => {
       this.get_userInfo()
       config.mytoast('修改成功!即将返回', res => {
         setTimeout((res) => {

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
+    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads/default/user_default.png',
     userInfo: null,
     ordel_count: 0,
     user_balance: 0
@@ -20,9 +20,9 @@ Page({
   },
   //获取个人信息
   get_userInfo() {
-    config.ajax('POST', {
+    config.tajax('POST', {
       token: wx.getStorageSync('user_token')
-    }, '/user/user_info', res => {
+    }, '/user/teacher_info', res => {
       this.setData({
         userInfo: res.data.data
       })

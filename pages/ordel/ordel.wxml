@@ -1,12 +1,14 @@
 <view class="tabWrap">
-   <view class="tabItem {{tabindex==index?'tabActive':''}}" wx:for="{{tab_list}}" wx:key='index' bindtap='select_tab' data-index='{{index}}'>{{item}}</view>
+  <view class="tabItem {{tabindex==index?'tabActive':''}}" wx:for="{{tab_list}}" wx:key='index' bindtap='select_tab' data-index='{{index}}'>
+    {{item}}
+  </view>
 </view>
 <view class='content'>
-  <view class='list'bindtap='to_res' data-id='{{item.order_id}}' wx:for="{{list}}"  wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+  <view class='list' bindtap='to_res' data-id='{{item.order_id}}' wx:for="{{list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
     <view class='list_head borT'>
       <image class='head_portrait' src='{{item.user_portrait}}'></image>
       <text class='head_name'>{{item.user_nickname}}</text>
-      <text class='head_time'>{{item.order_reservetime}}</text>
+      <text class='head_time'>{{item.order_createtime}}</text>
       <text class='head_ordel_money'>订单金额:￥{{item.order_money}}</text>
     </view>
     <view class='classInfo borT'>
@@ -17,8 +19,8 @@
         </view>
         <view class='line'></view>
         <view class='class_time'>
-          <text class='title'>12:00~13:00</text>
-          <text class='min_title'>7-12（周四）</text>
+          <text class='title'>{{item.startTime}}~{{item.endTime}}</text>
+          <text class='min_title'>{{item.order_reservetime.month}}-{{item.order_reservetime.day}}</text>
         </view>
       </view>
       <!-- <text class='ordert_type'>老师已接单，请付款</text> -->
@@ -28,24 +30,29 @@
       <text class='adder_distance'>{{item.distance}}KM</text>
     </view>
     <view class='scope_group'>
-      <view class='scope_normel_button' wx:if="{{tabindex==0}}" catchtap='reject_order' data-id='{{item.order_id}}'>驳回此单</view>
+      <view class='scope_normel_button' wx:if="{{tabindex==0}}" catchtap='reject_order' data-id='{{item.order_id}}'>
+        驳回此单
+      </view>
       <view class='scope_normel_button' wx:if="{{tabindex==1}}" catchtap='cendel_ordel'>取消订单</view>
-      <view class='scope_normel_button button_active' wx:if="{{tabindex==0}}" catchtap='receive_order' data-id='{{item.order_id}}'>立即接单</view>
-      <view class='scope_normel_button button_active' wx:if="{{tabindex==1}}" catchtap='dk' data-id='{{item.order_id}}'>打卡工作</view>
-       <view class='scope_normel_button' wx:if="{{tabindex==2}}">待评价</view>
-        <view class='scope_normel_button' wx:if="{{tabindex==3}}">已完成</view>
+      <view class='scope_normel_button button_active' wx:if="{{tabindex==0}}" catchtap='receive_order' data-id='{{item.order_id}}'>
+        立即接单
+      </view>
+      <view class='scope_normel_button button_active' wx:if="{{tabindex==1}}" catchtap='dk' data-id='{{item.order_id}}'>
+        打卡工作
+      </view>
+      <view class='scope_normel_button' wx:if="{{tabindex==2}}">待评价</view>
+      <view class='scope_normel_button' wx:if="{{tabindex==3}}">已完成</view>
     </view>
   </view>
-    <view class='nodata' wx-if="{{list.length==0}}">暂无数据~</view>
+  <view class='nodata' wx-if="{{list.length==0}}">暂无数据~</view>
 </view>
-
 <view class='mask' bindtap='hidemask' wx:if="{{mask}}">
   <block wx:if="{{type==0}}">
     <image src='http://class.zzvlm.com/3786@2x.png' class='mask_logo'></image>
     <view class='mask_title'>您还没接单权限哦，完成信息认证后平台将向您免费派单</view>
     <view class='mask_buttom' catchtap='rz'>立即认证</view>
   </block>
- <block wx:if="{{type==1}}">
+  <block wx:if="{{type==1}}">
     <image src='http://class.zzvlm.com/3785@2x.png' class='mask_logo'></image>
     <view class='mask_title'>正在验证…</view>
   </block>

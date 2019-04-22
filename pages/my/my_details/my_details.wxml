@@ -3,16 +3,16 @@
   <view class='list_wrap'>
     <view class='list list_val' bindtap='user_val'>
       <text class='title'>头像</text>
-      <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.user_portrait}}' class='val_logo'></image>
+      <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.teacher_portrait}}' class='val_logo'></image>
     </view>
     <view class='list' bindtap='user_name'>
       <text class='title'>昵称</text>
-      <input class='mintitle' value='{{userInfo.user_nickname}}' bindinput='userName'></input>
+      <input class='mintitle' value='{{userInfo.teacher_realname}}' bindinput='userName'></input>
       <!-- <text class='iconfont icon-arr-right-red'></text> -->
     </view>
     <view class='list' bindtap='bind_phone'>
       <text class='title'>更换手机号</text>
-      <text class='mintitle'>{{userInfo.user_phone}}</text>
+      <!-- <text class='mintitle'>{{userInfo.teacher_exigency_phone}}</text> -->
       <text class='iconfont icon-arr-right-red'></text>
     </view>
     <picker range="{{sex_list}}" range-key="label" bindchange='bindchange'>
@@ -27,12 +27,17 @@
         <text class='mintitle'>{{age_list[age_index].label}}</text>
       </view>
     </picker>
-
-    <view class='list'>
-      <text class='title'>紧急联系人(手机号)</text>
-      <input class='mintitle' placeholder='请输入'></input>
+<view class='list'>
+      <text class='title'>紧急联系人(姓名)</text>
+      <input class='mintitle' placeholder='请输入' value='{{userInfo.teacher_exigency_name}}' bindinput='get_ex_name'></input>
       <!-- <text class='iconfont icon-arr-right-red'></text> -->
     </view>
+    <view class='list'>
+      <text class='title'>紧急联系人(手机号)</text>
+      <input class='mintitle' placeholder='请输入' type='number' maxlength='11' value='{{userInfo.teacher_exigency_phone}}' bindinput='get_ex_phone'></input>
+      <!-- <text class='iconfont icon-arr-right-red'></text> -->
+    </view>
+    
   </view>
 </view>
 <view class='list_wrap' style='margin-top:16rpx;'>
