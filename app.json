@@ -2,6 +2,7 @@
   "pages": [
     
     "pages/ordel/ordel",
+    "pages/xy/xy",
     "pages/tx/tx",
     "pages/share/share",
     "pages/my/my",

@@ -2,7 +2,7 @@
    <view class="tabItem {{tabindex==index?'tabActive':''}}" wx:for="{{tab_list}}" wx:key='index' bindtap='select_tab' data-index='{{index}}'>{{item}}</view>
 </view>
 <view class='content'>
-  <view class='list' bindtap='to_res' wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+  <view class='list'bindtap='to_res' data-id='{{item.order_id}}' wx:for="{{list}}"  wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
     <view class='list_head borT'>
       <image class='head_portrait' src='{{item.user_portrait}}'></image>
       <text class='head_name'>{{item.user_nickname}}</text>
@@ -36,6 +36,7 @@
         <view class='scope_normel_button' wx:if="{{tabindex==3}}">已完成</view>
     </view>
   </view>
+    <view class='nodata' wx-if="{{list.length==0}}">暂无数据~</view>
 </view>
 
 <view class='mask' bindtap='hidemask' wx:if="{{mask}}">

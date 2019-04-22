@@ -50,4 +50,6 @@
 
 
 
-<view class='out_group' bindtap='save'>保存</view>
+<view class='out_group_green' bindtap='save'>保存</view>
+
+<view class='out_group' bindtap='out'>退出</view>

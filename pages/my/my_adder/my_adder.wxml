@@ -18,6 +18,6 @@
     </view>
   </view>
 </view>
-
+<view class='nodata' wx-if="{{list.length==0}}">暂无数据~</view>
 
 <view class='sumbit' bindtap='moveToLocation'>添 加 地 址</view>

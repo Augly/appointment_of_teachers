@@ -1,0 +1,8 @@
+/* pages/xy/xy.wxss */
+.wrap{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}

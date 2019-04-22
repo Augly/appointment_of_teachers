@@ -4,7 +4,7 @@
       <text class='title'>多点</text>
       <text class='min_title'>当前版本:V2.0.1</text>
   </view>
-  <view class='list'>
+  <view class='list' bindtap='go_xy'  >
     <text class='list_title'>使用协议</text>
     <text class='iconfont icon-arr-right-red'></text>
   </view>

@@ -27,6 +27,10 @@ Page({
   },
   //获取用户信息
   getUserInfo(res) {
+    console.log(res)
+    this.setData({
+      info: res.detail.userInfo
+    })
     this.to_index()
   },
   //发送验证码
@@ -102,7 +106,11 @@ Page({
     }
     config.ajax('POST', {
       phone: this.data.user_phone,
-      code: this.data.user_password
+      code: this.data.user_password,
+      portrait: this.data.info.avatarUrl || '',
+      nickname: this.data.info.nickname || '',
+      sex: this.data.info.gender || 1,
+      wx_code: app.globalData.wx_code
     }, '/login/user_login', res => {
       wx.setStorageSync('user_token', res.data.data.user_token)
       this.get_userInfo()

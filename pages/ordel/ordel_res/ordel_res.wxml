@@ -1,59 +1,73 @@
 <view class='head'>
   <view class='left'>
     <text class='left_title'>
-      等待卖家付款
+      {{info.order_status==1?'待匹配':info.order_status==2?'待接单':info.order_status==3?'待付款':info.order_status==4?'待授课':info.order_status==5?'待评价':info.order_status==10?'订单已取消':'完成'}}
     </text>
-    <text class='left_mintitle'>剩余23小时12分自动关闭</text>
+    <text class='left_mintitle'>明天0点自动关闭</text>
   </view>
   <!-- <image></image> -->
 </view>
 <view class='wrap'>
-  <view class='head_top borT'>
-    <image class='top_val' src='http://class.zzvlm.com/timg1@2x.png'></image>
+  <view class='head_top borT' bindtap='to_teacher_res'>
+    <image class='top_val' src="{{info.teacher_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+info.teacher_portrait:default_src}}"></image>
     <view class='top_res'>
       <view class='top_res_title'>
-        <text class='top_res_name'>朱萧木</text>
+        <text class='top_res_name'>{{info.teacher_realname?info.teacher_realname:'未知'}}</text>
         <!-- <text class='top_res_label'>卓越</text>
         <text class='top_res_label'>卓越</text> -->
       </view>
-      <view class='top_res_detail'>天津市南开区宾水西道天穆园4栋201</view>
+      <view class='top_res_detail'>{{info.teacher_academy?info.teacher_academy:'未获取'}} · {{info.teacher_major?info.teacher_major:'未获取'}}</view>
     </view>
-    <text class='distance'>2.4KM</text>
+    <text class='iconfont icon-arr-right-red'></text>
   </view>
   <view class='list_wrap borT'>
     <view class='list_item'>
       <text class='title'>年级</text>
-      <text class='mintitle'>初中一年级</text>
+      <text class='mintitle'>{{info.grade_name}}</text>
     </view>
     <view class='list_item'>
       <text class='title'>科目</text>
-      <text class='mintitle'>化学</text>
+      <text class='mintitle'>{{info.subjects_name}}</text>
     </view>
     <view class='list_item'>
       <text class='title'>时间</text>
-      <text class='mintitle'>7-12 12:00~13:00(明天)</text>
+      <text class='mintitle'>{{info.order_reservetime.month}}-{{info.order_reservetime.day}} {{info.startTime}}~{{info.endTime}}</text>
     </view>
-    <!-- <view class='list_item'>
+    <view class='list_item'>
       <text class='title'>地点</text>
-      <text class='mintitle'>天津市南开区宾水西道天穆园4栋201</text>
-    </view> -->
+      <text class='mintitle'>{{info.order_address}}</text>
+    </view>
     <view class='list_item'>
       <text class='title'>订单状态</text>
-      <text class='mintitle'>待授课</text>
+      <text class='mintitle'>  {{info.order_status==1?'待选择教师':info.order_status==2?'待教师接单':info.order_status==3?'等待卖家付款':info.order_status==4?'等待教师授课':info.order_status==4?'待评价':info.order_status==10?'订单已取消':'完成'}}</text>
     </view>
   </view>
   <view class='price_group borT'>
-    <text class='title'>订单金额</text>
-    <text class='price_mintitle'>￥299.00</text>
+    <text class='price_title'>实际付款</text>
+    <text class='price_mintitle'>￥{{info.order_money}}</text>
   </view>
   <view class='tip_group'>
-    <text class='tip'>订单编号：831202348210410</text>
-    <text class='tip'>创建时间：2018-09-07 12:32</text>
+    <text class='tip'>订单编号：{{info.order_number}}</text>
+    <text class='tip'>创建时间：{{info.order_createtime}}</text>
     <text class='tip'>备注信息：请事前电话预约确认下</text>
   </view>
 </view>
 
 <view class='bottom_group'>
-  <view class='cendel' bindtap='hide_ordel'>隐藏此单</view>
-  <view class='payed' bindtap='sure_ordel'>立即接单</view>
+  <view class='cendel' bindtap='cendel_ordel' wx:if="{{info.order_status<=2}}">驳回订单</view>
+  <view class='payed' bindtap='pay_ordel'>{{info.order_status==1?'去匹配':info.order_status==2?'立即接单':info.order_status==3?'待付款':info.order_status==4?'立即打卡':info.order_status==5?'待评价':info.order_status==10?'订单已取消':'完成'}}</view>
+</view>
+
+
+
+<view class='mask' bindtap='hidemask' wx:if="{{mask}}">
+  <view class='dk_wrap'>
+    <view class='imgRes'>
+      <image src='{{dk_img}}' class='imgRes_img'></image>
+      <image class='phone' src='http://class.zzvlm.com/pgon3834@2x.png' catchtap='up_val'></image>
+    </view>
+    <text class='dk_title'>打卡工作</text>
+    <text class='dk_mintitle'>上传相关照片确认打卡</text>
+    <view class='mask_buttom' catchtap='up_ok'>立即上传</view>
+  </view>
 </view>

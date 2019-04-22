@@ -130,7 +130,16 @@ Page({
 
   },
   call() {
-    config.mytoast('打电话')
+    config.ajax('POST', {
+
+    }, '/index/service_phone', res => {
+      wx.makePhoneCall({
+        phoneNumber: res.data.data.url,
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    })
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作

@@ -35,6 +35,19 @@ Page({
       age_list: s
     })
   },
+  out() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/suggestion_feedback', res => {
+      wx.clearStorage()
+      wx.navigateTo({
+        url: '/pages/login/login',
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    })
+  },
   //选择性别
   bindchange(e) {
     console.log(e)

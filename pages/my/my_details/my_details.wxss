@@ -61,8 +61,26 @@ page {
   margin-right: 12rpx;
 }
 
-.out_group {
-  width: 750rpx;
+.out_group_green {
+ width: 700rpx;
+  height: 96rpx;
+  background: RGBA(96, 234, 243, 1);
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 100rpx;
+}
+.out_group{
+  width: 700rpx;
   height: 96rpx;
   background: rgba(231, 73, 122, 1);
   font-size: 30rpx;
@@ -76,5 +94,6 @@ page {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 96rpx;
+  margin: 0 auto;
+  margin-top: 44rpx;
 }

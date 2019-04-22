@@ -12,3 +12,4 @@
   </view>
   <text class='list_price'>{{item.user_balance_type==1?'+':'-'}}{{item.user_balance_money}}</text>
 </view>
+<view class='nodata' wx-if="{{list.length==0}}">暂无数据~</view>
