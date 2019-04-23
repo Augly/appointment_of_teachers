@@ -35,7 +35,7 @@ Page({
   },
   //发送验证码
   send_code() {
-    if (!/^1[34578]\d{9}$/.test(this.data.user_phone)) {
+    if (!/^1[345789]\d{9}$/.test(this.data.user_phone)) {
       config.mytoast('请输入正确的手机号!')
       return false
     }
@@ -96,7 +96,7 @@ Page({
   },
   //进行登陆操作
   to_index() {
-    if (!/^1[34578]\d{9}$/.test(this.data.user_phone)) {
+    if (!/^1[345789]\d{9}$/.test(this.data.user_phone)) {
       config.mytoast('请输入正确的手机号!')
       return false
     }

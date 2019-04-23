@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
     type: 4,
     mask: false,
     list: [],
@@ -20,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.get_order_receiving()
   },
   //驳回订单
   reject_order(e) {
@@ -28,6 +29,10 @@ Page({
       token: wx.getStorageSync('user_token'),
       order_id: e.currentTarget.dataset.id
     }, '/index/reject_order', res => {
+      this.setData({
+        list: [],
+        page: 1
+      })
       this.get_order_receiving()
     })
   },
@@ -37,6 +42,10 @@ Page({
       token: wx.getStorageSync('user_token'),
       order_id: e.currentTarget.dataset.id
     }, '/index/receive_order', res => {
+      this.setData({
+        list: [],
+        page: 1
+      })
       this.get_order_receiving()
     })
   },
@@ -52,6 +61,7 @@ Page({
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
+          item.distance = parseInt(item.distance/1000)
           return item
         })
       })
@@ -63,14 +73,19 @@ Page({
       token: wx.getStorageSync('user_token'),
       page: this.data.page
     }, '/index/order_clock', res => {
-      this.setData({
-        list: res.data.data.map((item) => {
+      if (res.data.data.length > 0) {
+        var list = res.data.data.map((item) => {
           item.startTime = config.timeForm(item.order_reservetime).chatTime.hour + ':' + config.timeForm(item.order_reservetime).chatTime.minute
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
+          item.distance = parseInt(item.distance / 1000)
           return item
         })
+      }
+      this.setData({
+        page: this.data.page + 1,
+        list: res.data.data.length > 0 ? this.data.list.concat(list) : this.data.list
       })
     })
   },
@@ -80,14 +95,19 @@ Page({
       token: wx.getStorageSync('user_token'),
       page: this.data.page
     }, '/index/order_estimate', res => {
-      this.setData({
-        list: res.data.data.map((item) => {
+      if (res.data.data.length > 0) {
+        var list = res.data.data.map((item) => {
           item.startTime = config.timeForm(item.order_reservetime).chatTime.hour + ':' + config.timeForm(item.order_reservetime).chatTime.minute
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
+          item.distance = parseInt(item.distance / 1000)
           return item
         })
+      }
+      this.setData({
+        page: this.data.page + 1,
+        list: res.data.data.length > 0 ? this.data.list.concat(list) : this.data.list
       })
     })
   },
@@ -97,14 +117,19 @@ Page({
       token: wx.getStorageSync('user_token'),
       page: this.data.page
     }, '/index/order_accomplish', res => {
-      this.setData({
-        list: res.data.data.map((item) => {
+      if (res.data.data.length > 0) {
+        var list = res.data.data.map((item) => {
           item.startTime = config.timeForm(item.order_reservetime).chatTime.hour + ':' + config.timeForm(item.order_reservetime).chatTime.minute
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
+          item.distance = parseInt(item.distance / 1000)
           return item
         })
+      }
+      this.setData({
+        page: this.data.page + 1,
+        list: res.data.data.length > 0 ? this.data.list.concat(list) : this.data.list
       })
     })
   },
@@ -136,12 +161,6 @@ Page({
     }, complete => {
       console.log(complete)
     }, this.data.dk_img)
-    // wx.navigateTo({
-    //   url: '/pages/ordel/sure_ordel/ordel_sure',
-    //   success: function (res) { },
-    //   fail: function (res) { },
-    //   complete: function (res) { },
-    // })
   },
   call_dk(id, longitude, latitude,img) {
     config.tajax('POST', {
@@ -152,6 +171,10 @@ Page({
       clock_img: img
     }, '/index/clock_order', succes => {
       config.mytoast('打卡成功!')
+      this.setData({
+        list: [],
+        page: 1
+      })
       this.get_order_clock()
     })
   },
@@ -169,15 +192,6 @@ Page({
 
       },
     })
-    // config.ajax('img', {
-    //   token: wx.getStorageSync('user_token')
-    // }, '/user/upload_img', succes => {
-
-    // }, error => {
-    //   console.log(error)
-    // }, complete => {
-    //   console.log(complete)
-    // }, this.data.dk_img)
   },
   dk(e) {
     this.setData({
@@ -191,21 +205,6 @@ Page({
       this.setData({
         dk_img: res.tempFilePaths[0]
       })
-      // config.ajax('img', {
-      //   token: wx.getStorageSync('user_token')
-      // }, '/user/upload_img', succes => {
-      //   var userInfo = this.data.userInfo
-      //   userInfo.user_portrait = succes.data.path
-      //   this.setData({
-      //     userInfo: userInfo,
-      //     sex_index: res.data.data.user_sex - 1,
-      //     age_index: res.data.data.user_age
-      //   })
-      // }, error => {
-      //   console.log(error)
-      // }, complete => {
-      //   console.log(complete)
-      // }, res.tempFilePaths[0])
     })
   },
   to_res(e) {
@@ -218,7 +217,9 @@ Page({
   },
   select_tab(e) {
     this.setData({
-      tabindex: e.currentTarget.dataset.index
+      tabindex: e.currentTarget.dataset.index,
+      page:1,
+      list:[]
     })
     this.get_status();
   },
@@ -231,10 +232,13 @@ Page({
         if (this.data.tabindex == 0) {
           this.get_order_receiving()
         } else if (this.data.tabindex == 1) {
+        
           this.get_order_clock()
         } else if (this.data.tabindex == 2) {
+        
           this.get_order_estimate()
         } else {
+        
           this.get_order_accomplish()
         }
       }else{

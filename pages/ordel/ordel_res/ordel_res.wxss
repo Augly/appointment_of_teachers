@@ -68,6 +68,7 @@ page {
 .top_val {
   width: 96rpx;
   height: 96rpx;
+  border-radius:50%; 
 }
 
 .top_res {

@@ -7,7 +7,7 @@
       </view>
       <!-- <text class='mintitle'>每天一斤酒赛过活神仙</text> -->
     </view>
-     <image class='portrait' src="{{userInfo.teacher_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+userInfo.teacher_portrait:default_src}}"></image>
+     <image class='portrait' src="{{userInfo.user_portrait?userInfo.user_portrait_type==1?'http://yueke.dazhu-ltd.cn/public/uploads/'+userInfo.user_portrait:userInfo.user_portrait:default_src}}"></image>
   </view>
   <view class='head_other'>
     <view class='otherItem' bindtap='to_ordel'>

@@ -82,6 +82,7 @@ page {
 .head_portrait {
   width: 94rpx;
   height: 94rpx;
+  border-radius:50%; 
 }
 
 .head_name {

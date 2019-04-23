@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[],
+    page:1
   },
 
   /**
@@ -18,12 +19,20 @@ Page({
   //获取明细
   get_init(){
     config.ajax('POST',{
-      token:wx.getStorageSync('user_token')
+      token:wx.getStorageSync('user_token'),
+      page:1,
     },'/user/balance_detail',res=>{
-      this.setData({
-        list:res.data.data.map((item)=>{
+      if (res.data.data.length > 0) {
+        var list = res.data.data.map((item) => {
           item.user_balance_createtime = config.timeForm(item.user_balance_createtime).chatTime
+          return item
         })
+      }else{
+        config.mytoast('暂无更多数据')
+      }
+      this.setData({
+        page: this.data.page + 1,
+        list: res.data.data.length > 0 ? this.data.list.concat(list) : this.data.list
       })
     })
   },
