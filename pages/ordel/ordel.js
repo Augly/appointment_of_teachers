@@ -21,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.get_order_receiving()
+    
   },
   //驳回订单
   reject_order(e) {
@@ -34,6 +34,14 @@ Page({
         page: 1
       })
       this.get_order_receiving()
+    })
+  },
+  //缴纳押金
+  pay_yj(){
+    config.tajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/check/pay_deposit', res => {
+      console.log(res)
     })
   },
   //立即接单
@@ -238,7 +246,6 @@ Page({
         
           this.get_order_estimate()
         } else {
-        
           this.get_order_accomplish()
         }
       }else{
@@ -278,7 +285,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.get_status();
   },
 
   /**

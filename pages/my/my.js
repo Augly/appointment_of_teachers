@@ -18,6 +18,40 @@ Page({
   onLoad: function (options) {
 
   },
+  get_status() {
+    config.tajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/check/audit_status', res => {
+      // console.log(res)
+      if (res.data.data.teacher_audit_status == -1){
+        wx.switchTab({
+          url: '/pages/ordel/ordel',
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
+        })
+      }
+      // if (res.data.data.teacher_audit_status == 2) {
+      //   if (this.data.tabindex == 0) {
+      //     this.get_order_receiving()
+      //   } else if (this.data.tabindex == 1) {
+
+      //     this.get_order_clock()
+      //   } else if (this.data.tabindex == 2) {
+
+      //     this.get_order_estimate()
+      //   } else {
+
+      //     this.get_order_accomplish()
+      //   }
+      // } else {
+      //   this.setData({
+      //     mask: true,
+      //     type: res.data.data.teacher_audit_status
+      //   })
+      // }
+    })
+  },
   //获取个人信息
   get_userInfo() {
     config.tajax('POST', {
@@ -107,7 +141,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.get_status()
     this.setData({
       userInfo: wx.getStorageSync('userInfo')
     })
