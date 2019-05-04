@@ -21,7 +21,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    if (options.inviter_id){
+      wx.setStorageSync('inviter_id',options.inviter_id)
+    }
   },
   //驳回订单
   reject_order(e) {
@@ -264,7 +266,7 @@ Page({
   rz(){
     this.setData({
       mask: true,
-      type: 5
+      type: -1
     })
   },
   /**

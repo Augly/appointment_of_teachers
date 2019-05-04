@@ -50,7 +50,7 @@
   <block wx:if="{{type==0}}">
     <image src='http://class.zzvlm.com/3786@2x.png' class='mask_logo'></image>
     <view class='mask_title'>您还没接单权限哦，完成信息认证后平台将向您免费派单</view>
-    <view class='mask_buttom' catchtap='rz'>立即认证</view>
+    <view class='mask_buttom' catchtap='wszl'>立即认证</view>
   </block>
   <block wx:if="{{type==1}}">
     <image src='http://class.zzvlm.com/3785@2x.png' class='mask_logo'></image>
@@ -61,7 +61,7 @@
     <view class='mask_title'>缴纳押金并开始接单</view>
     <view class='mask_title' style='margin-top:10rpx'>完善资料用户可获低押金权限</view>
     <view class='mask_buttom' catchtap='pay_yj'>立即缴纳</view>
-    <view class='mask_buttom mask_sure' catchtap='wszl'>完善资料</view>
+    <!-- <view class='mask_buttom mask_sure' catchtap='wszl'>完善资料</view> -->
   </block>
   <block wx:if="{{type==4}}">
     <view class='dk_wrap'>

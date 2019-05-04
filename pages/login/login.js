@@ -16,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
   get_userInfo() {
     config.ajax('POST', {
@@ -108,11 +108,13 @@ Page({
       phone: this.data.user_phone,
       code: this.data.user_password,
       portrait: this.data.info.avatarUrl || '',
-      nickname: this.data.info.nickname || '',
+      nickname: this.data.info.nickName || '',
       sex: this.data.info.gender || 1,
-      wx_code: app.globalData.wx_code
+      wx_code: app.globalData.wx_code,
+      inviter_id: wx.getStorageSync('inviter_id') || ''
     }, '/login/user_login', res => {
       wx.setStorageSync('user_token', res.data.data.user_token)
+      wx.setStorageSync('user_openid', res.data.data.user_openid)
       this.get_userInfo()
       wx.switchTab({
         url: '/pages/ordel/ordel',

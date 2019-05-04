@@ -10,26 +10,12 @@
     "pages/income/income",
     "pages/my/my_adder/my_adder",
     "pages/login/login",
-    
-    
-    
-    
     "pages/income_details/income_details",
-    
     "pages/wallet/wallet",
     "pages/authentication/authentication",
-    
-    
-   
-    
-    
     "pages/ordel/ordel_res/ordel_res",
     "pages/my/my_details/my_details",
-    
-    
-    
     "pages/index/teacher_index/teacher_index",
-   
     "pages/evaluate/evaluate",
     "pages/feed_back/feed_back",
     "pages/my/about_us/about_us",
@@ -46,11 +32,11 @@
     "navigationBarTitleText": "约课",
     "navigationBarTextStyle": "white"
   },
-    "permission": {
-      "scope.userLocation": {
-        "desc": "用于获取用户的地理位置"
-      }
-    },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于获取用户的地理位置"
+    }
+  },
   "tabBar": {
     "selectedColor": "#60EAF3",
     "list": [
@@ -67,5 +53,6 @@
         "selectedIconPath": "status/3748@2x.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
