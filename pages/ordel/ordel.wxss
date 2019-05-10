@@ -116,7 +116,9 @@ page {
   color: rgba(44, 44, 44, 1);
   margin-left: auto;
 }
-
+.adder_title{
+  width: 80%
+}
 .classInfo {
   width: 100%;
   height: auto;
@@ -332,8 +334,8 @@ page {
 }
 
 .phone {
-  width: 48rpx;
-  height: 48rpx;
+  width: 58rpx;
+  height: 58rpx;
   position: absolute;
   right: 0;
   bottom: 0;
