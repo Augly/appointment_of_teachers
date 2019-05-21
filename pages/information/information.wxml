@@ -22,20 +22,21 @@
       <text class='iconfont icon-arr-right-red'></text>
     </view>
   </picker>
-  <picker range="{{age_list}}" range-key="label" bindchange='bindageChange'>
+  <picker mode="date"
+    value="{{birthday}}" bindchange='bindageChange'>
     <view class='list borT'>
-      <text class='list_title'>年龄：</text>
-      <view class='list_ipt disab'>{{age_list[age_index].label}}</view>
+      <text class='list_title'>生日：</text>
+      <view class='list_ipt disab'>{{birthday}}</view>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
   </picker>
-  <picker bindchange="bindPickerChange" data-type='grade' value="{{grade_index}}" range="{{grade_list}}" range-key='grade_name'>
+  <!-- <picker bindchange="bindPickerChange" data-type='grade' value="{{grade_index}}" range="{{grade_list}}" range-key='grade_name'>
     <view class='list borT'>
       <text class='list_title'>年级：</text>
       <view class='list_ipt disab'>{{grade_list[grade_index].grade_name}}</view>
       <text class='iconfont icon-arr-right-red'></text>
     </view>
-  </picker>
+  </picker> -->
   <view class='list borT'>
     <text class='list_title'>院校：</text>
     <input class='list_ipt' placeholder='请选择' value='{{school}}' bindinput='get_school'></input>
@@ -48,14 +49,17 @@
   </view>
 </view>
 <view class='class'>
-  <view class='class_title'>教学风格(三选一)</view>
+  <view class='class_title'>教学年级(多选)</view>
   <view class='select_group'>
-    <block wx:for="{{fg_list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+    <text class="select_item {{item.check?'select_class':''}}" wx:for="{{grade_list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}" bindtap='select_item' data-index='{{index}}'>{{item.grade_name}}</text>
+  </view>
+  <!-- <view class='select_group'>
+    <block wx:for="{{grade_list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
       <view class="select_item {{fg_index==index?'select_class':''}}" bindtap='select_item' data-index='{{index}}'>
         {{item.label}}
       </view>
     </block>
-  </view>
+  </view> -->
   <view class='class_title'>教学科目(多选)</view>
   <view class='select_group'>
     <text class="select_item {{item.check?'select_class':''}}" wx:for="{{class_list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}" bindtap='select_class' data-index='{{index}}'>{{item.subjects_name}}</text>

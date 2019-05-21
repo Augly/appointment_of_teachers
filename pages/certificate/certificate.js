@@ -1,5 +1,5 @@
 // pages/certificate/certificate.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
@@ -7,8 +7,8 @@ Page({
    */
   data: {
     arr: [[{ type: 1, value: 2 }], [{ type: 2, value: 3 }]],
-    certificate:'',
-    certificate_img:''
+    certificate: '',
+    certificate_img: ''
   },
 
   /**
@@ -18,7 +18,7 @@ Page({
 
   },
   //获取证件名
-  get_certificate(e){
+  get_certificate(e) {
     this.setData({
       certificate: e.detail.value
     })
@@ -29,7 +29,7 @@ Page({
   onReady: function () {
 
   },
-  get_certificate_img(){
+  get_certificate_img() {
     config.chooseImage(res => {
       config.ajax('img', {
         token: wx.getStorageSync('user_token')
@@ -46,10 +46,14 @@ Page({
   },
   next() {
     let info = wx.getStorageSync('info')
-    info['token']=wx.getStorageSync('user_token')
+    console.log(info)
+    info['token'] = wx.getStorageSync('user_token')
     info['certificate'] = this.data.certificate
     info['certificate_img'] = this.data.certificate_img
-    config.tajax('POST', info,'/check/commit_audit',res=>{
+    info['subjects'] = JSON.stringify(info['subjects'])
+    info['grade'] = JSON.stringify(info['grade'])
+    console.log(info['subjects'])
+    config.tajax('POST',info, '/check/commit_audit', res => {
       wx.switchTab({
         url: '/pages/my/my',
         success: function (res) { },

@@ -1,32 +1,33 @@
 // pages/information/information.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    class_list:[],
-    portrait:'',
-    grade_index:0,
+    birthday:'',
+    class_list: [],
+    portrait: '',
+    grade_index: 0,
     grade_list: [],
-    fg_index:0,
-    name:'',
-    school:'',
-    major:'',
+    fg_index: 0,
+    name: '',
+    school: '',
+    major: '',
     sex_index: 0,
     age_index: 0,
     age_list: [],
-    fg_list:[{
-      label:'幽默风趣',
-      value:0
+    fg_list: [{
+      label: '幽默风趣',
+      value: 0
     }, {
-        label: '形象生动',
-        value: 1
-      }, {
-        label: '活泼轻松',
-        value: 2
-      },],
+      label: '形象生动',
+      value: 1
+    }, {
+      label: '活泼轻松',
+      value: 2
+    },],
     sex_list: [{
       label: '男',
       value: 1
@@ -47,8 +48,14 @@ Page({
         value: n
       })
     }
+    let year = new Date().getFullYear();
+    let mouth = new Date().getMonth() + 1;
+    mouth = mouth > 10 ? mouth : '0' + mouth
+    let day = new Date().getDate();
+    day = day > 9 ? day : '0' + day
     this.setData({
-      age_list: s
+      age_list: s,
+      birthday: year + '-' + mouth + '-' + day
     })
     this.getClass_list()
     this.getGrade_lsit()
@@ -58,7 +65,10 @@ Page({
     config.ajax('POST', {}, '/index/grade_list', res => {
       console.log(res.data.data)
       this.setData({
-        grade_list: res.data.data
+        grade_list: res.data.data.map((item) => {
+          item.check = false
+          return item
+        })
       })
     })
   },
@@ -104,21 +114,23 @@ Page({
   getClass_list() {
     config.ajax('POST', {}, '/index/subjects_list', res => {
       this.setData({
-        class_list: res.data.data.map((item)=>{
-          item.check=false
+        class_list: res.data.data.map((item) => {
+          item.check = false
           return item
         })
       })
     })
   },
-  //选择教学风格
-  select_item(e){
+  //选择教学年级
+  select_item(e) {
+    let arr = this.data.grade_list
+    arr[e.currentTarget.dataset.index].check = !arr[e.currentTarget.dataset.index].check
     this.setData({
-      fg_index:e.currentTarget.dataset.index
+      grade_list: arr
     })
   },
   //选择教学科目
-  select_class(e){
+  select_class(e) {
     let arr = this.data.class_list
     arr[e.currentTarget.dataset.index].check = !arr[e.currentTarget.dataset.index].check
     this.setData({
@@ -134,21 +146,20 @@ Page({
   },
   //选择年龄
   bindageChange(e) {
-    console.log(e)
     this.setData({
-      age_index: e.detail.value
+      birthday: e.detail.value
     })
   },
   //性别
-  get_userName(e){
+  get_userName(e) {
     this.setData({
-      name:e.detail.value
+      name: e.detail.value
     })
   },
   //院校
-  get_school(e){
+  get_school(e) {
     this.setData({
-      school:e.detail.value
+      school: e.detail.value
     })
   },
   //专业
@@ -163,11 +174,17 @@ Page({
   onReady: function () {
 
   },
-  next(){
-    let arr=[]
-    for(let s=0;s<this.data.class_list.length;s++){
-      if (this.data.class_list[s].check){
+  next() {
+    let arr = []
+    for (let s = 0; s < this.data.class_list.length; s++) {
+      if (this.data.class_list[s].check) {
         arr.push(this.data.class_list[s].subjects_id)
+      }
+    }
+    let newArr = []
+    for (let s = 0; s < this.data.grade_list.length; s++) {
+      if (this.data.grade_list[s].check) { 
+        newArr.push(this.data.grade_list[s].grade_id)
       }
     }
     // if (this.data.portrait==''){
@@ -182,26 +199,29 @@ Page({
       config.mytoast('请填写专业!')
       return false
     }
-    if (arr.length==0) {
+    if (arr.length == 0) {
       config.mytoast('请至少选择一个教学科目')
       return false
     }
-    
+    if (newArr.length == 0) {
+      config.mytoast('请至少选择一个教学年级')
+      return false
+    }
     wx.setStorageSync('info', {
       portrait: this.data.portrait,
-      realname:this.data.name,
+      realname: this.data.name,
       sex: this.data.sex_list[this.data.sex_index].value,
-      age: this.data.age_list[this.data.age_index].value,
-      grade: [this.data.grade_list[this.data.grade_index].grade_id],
-      academy:this.data.school,
+      birthday: this.data.birthday,
+      grade: newArr,
+      academy: this.data.school,
       major: this.data.major,
       subjects: arr
     })
     wx.navigateTo({
       url: '/pages/authentication/authentication',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**

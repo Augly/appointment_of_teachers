@@ -21,13 +21,24 @@
         <text class='mintitle'>{{sex_list[sex_index].label}}</text>
       </view>
     </picker>
-    <picker range="{{age_list}}" range-key="label" bindchange='bindageChange'>
+    <picker mode="date"
+    value="{{birthday}}" bindchange='bindageChange'>
       <view class='list'>
-        <text class='title'>年龄</text>
-        <text class='mintitle'>{{age_list[age_index].label}}</text>
+        <text class='title'>生日</text>
+        <text class='mintitle'>{{birthday}}</text>
       </view>
     </picker>
-<view class='list'>
+    <view class='class'>
+      <view class='class_title'>教学年级(多选)</view>
+      <view class='select_group'>
+        <text class="select_item {{item.check?'select_class':''}}" wx:for="{{grade_list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}" bindtap='select_item' data-index='{{index}}'>{{item.grade_name}}</text>
+      </view>
+      <view class='class_title'>教学科目(多选)</view>
+      <view class='select_group'>
+        <text class="select_item {{item.check?'select_class':''}}" wx:for="{{class_list}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}" bindtap='select_class' data-index='{{index}}'>{{item.subjects_name}}</text>
+      </view>
+    </view>
+    <view class='list'>
       <text class='title'>紧急联系人(姓名)</text>
       <input class='mintitle' placeholder='请输入' value='{{userInfo.teacher_exigency_name}}' bindinput='get_ex_name'></input>
       <!-- <text class='iconfont icon-arr-right-red'></text> -->
@@ -37,7 +48,7 @@
       <input class='mintitle' placeholder='请输入' type='number' maxlength='11' value='{{userInfo.teacher_exigency_phone}}' bindinput='get_ex_phone'></input>
       <!-- <text class='iconfont icon-arr-right-red'></text> -->
     </view>
-    
+
   </view>
 </view>
 <view class='list_wrap' style='margin-top:16rpx;'>
@@ -46,11 +57,10 @@
     <!-- <text class='mintitle'>河西区友谊路萧...</text> -->
     <text class='iconfont icon-arr-right-red'></text>
   </view>
-  <view class='list' bindtap='rz'>
+  <!-- <view class='list' bindtap='rz'>
     <text class='title'>我的认证</text>
-    <!-- <text class='mintitle'>河西区友谊路萧...</text> -->
     <text class='iconfont icon-arr-right-red'></text>
-  </view>
+  </view> -->
 </view>
 
 

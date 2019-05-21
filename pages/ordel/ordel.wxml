@@ -47,10 +47,16 @@
   <view class='nodata' wx-if="{{list.length==0}}">暂无数据~</view>
 </view>
 <view class='mask' bindtap='hidemask' wx:if="{{mask}}">
+<!-- <view class='mask' wx:if="{{mask}}"> -->
   <block wx:if="{{type==0}}">
     <image src='http://class.zzvlm.com/3786@2x.png' class='mask_logo'></image>
     <view class='mask_title'>您还没接单权限哦，完成信息认证后平台将向您免费派单</view>
     <view class='mask_buttom' catchtap='wszl'>立即认证</view>
+  </block>
+  <block wx:if="{{type==3}}">
+    <image src='http://class.zzvlm.com/3786@2x.png' class='mask_logo'></image>
+    <view class='mask_title'>您的审核已被驳回，请重新提交审核</view>
+    <view class='mask_buttom' catchtap='wszl'>再次认证</view>
   </block>
   <block wx:if="{{type==1}}">
     <image src='http://class.zzvlm.com/3785@2x.png' class='mask_logo'></image>

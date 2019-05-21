@@ -34,7 +34,7 @@
   },
   "permission": {
     "scope.userLocation": {
-      "desc": "用于获取用户的地理位置"
+      "desc": "您的位置信息将用于获取周围商家信息"
     }
   },
   "tabBar": {

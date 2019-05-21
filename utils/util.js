@@ -294,7 +294,7 @@ function tajax(Type, params, url, successData, nosuccessData, errorData, complet
           //登陆超时
           mytoast('登陆超时')
           wx.clearStorage('user_token')
-          wx.redirectTo({
+          wx.reLaunch({
             url: '/pages/login/login',
             success: function (res) { },
             fail: function (res) { },
@@ -389,7 +389,7 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
           //登陆超时
           mytoast('登陆超时')
           wx.clearStorage('user_token')
-          wx.redirectTo({
+          wx.reLaunch({
             url: '/pages/login/login',
             success: function (res) { },
             fail: function (res) { },

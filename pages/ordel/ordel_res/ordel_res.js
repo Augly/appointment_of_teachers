@@ -22,10 +22,10 @@ Page({
   },
   //获取订单信息
   get_init_data(id) {
-    config.ajax('POST', {
+    config.tajax('POST', {
       token: wx.getStorageSync('user_token'),
       order_id: id
-    }, '/user/order_info', res => {
+    }, '/index/order_info', res => {
       console.log(res)
       let data = res.data.data
       data.startTime = config.timeForm(data.order_reservetime).chatTime.hour + ':' + config.timeForm(data.order_reservetime).chatTime.minute

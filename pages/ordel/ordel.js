@@ -165,6 +165,7 @@ Page({
     config.ajax('img', {
       token: wx.getStorageSync('user_token')
     }, '/user/upload_img', succes => {
+      console.log('上传图片成功')
       this.dk_success(succes)
     }, error => {
       console.log(error)
@@ -180,8 +181,10 @@ Page({
       latitude: latitude,
       clock_img: img
     }, '/index/clock_order', succes => {
+      console.log('打卡成功')
       config.mytoast('打卡成功!')
       this.setData({
+        mask:false,
         list: [],
         page: 1
       })
@@ -190,13 +193,13 @@ Page({
   },
   dk_success(data) {
     wx.getLocation({
-      type: 'gcj02 ',
-      altitude: false,
+      type: 'wgs84',
       success: (res) => {
+        console.log('获取位置成功')
         this.call_dk(this.data.dk_id, res.longitude, res.latitude, data.data.path)
       },
       fail: (res) => {
-
+        console.log(res)
       },
       complete: (res) => {
 
@@ -259,9 +262,11 @@ Page({
     })
   },
   hidemask() {
-    this.setData({
-      mask: false
-    })
+    if(this.data.type==4){
+      this.setData({
+        mask: false
+      })
+    }
   },
   rz(){
     this.setData({

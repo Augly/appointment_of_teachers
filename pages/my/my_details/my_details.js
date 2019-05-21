@@ -6,8 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ex_name:'',
-    ex_phone:'',
+    birthday: '',
+    ex_name: '',
+    ex_phone: '',
     userInfo: null,
     sex_index: 0,
     age_index: 0,
@@ -18,13 +19,17 @@ Page({
     }, {
       label: '女',
       value: 2
-    }]
+    }],
+    class_list: [],
+    grade_list: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getClass_list()
+    this.getGrade_lsit()
     this.get_userInfo()
     var s = []
     for (let n = 0; n < 100; n++) {
@@ -36,13 +41,53 @@ Page({
     this.setData({
       age_list: s
     })
+
+  },
+  //年级列表
+  getGrade_lsit() {
+    config.ajax('POST', {}, '/index/grade_list', res => {
+      console.log(res.data.data)
+      this.setData({
+        grade_list: res.data.data.map((item) => {
+          item.check = false
+          return item
+        })
+      })
+    })
+  },
+  //选择教学年级
+  select_item(e) {
+    let arr = this.data.grade_list
+    arr[e.currentTarget.dataset.index].check = !arr[e.currentTarget.dataset.index].check
+    this.setData({
+      grade_list: arr
+    })
+  },
+  //选择教学科目
+  select_class(e) {
+    let arr = this.data.class_list
+    arr[e.currentTarget.dataset.index].check = !arr[e.currentTarget.dataset.index].check
+    this.setData({
+      class_list: arr
+    })
+  },
+  //科目列表
+  getClass_list() {
+    config.ajax('POST', {}, '/index/subjects_list', res => {
+      this.setData({
+        class_list: res.data.data.map((item) => {
+          item.check = false
+          return item
+        })
+      })
+    })
   },
   out() {
     config.ajax('POST', {
       token: wx.getStorageSync('user_token')
     }, '/user/login_out', res => {
       wx.clearStorage()
-      wx.navigateTo({
+      wx.reLaunch({
         url: '/pages/login/login',
         success: function (res) { },
         fail: function (res) { },
@@ -57,11 +102,10 @@ Page({
       sex_index: e.detail.value
     })
   },
-  //选择年龄
+  //选择生日
   bindageChange(e) {
-    console.log(e)
     this.setData({
-      age_index: e.detail.value
+      birthday: e.detail.value
     })
   },
   //获取个人信息
@@ -70,10 +114,29 @@ Page({
       token: wx.getStorageSync('user_token')
     }, '/user/teacher_info', res => {
       wx.setStorageSync('userInfo', res.data.data)
+      let arr = this.data.grade_list
+      let newArr = this.data.class_list
+      for (let s = 0; s < arr.length; s++) {
+        for (let t = 0; t < res.data.data.teacher_grade.length; t++) {
+          if (arr[s].grade_id == res.data.data.teacher_grade[t].grade_id) {
+            arr[s].check = true
+          }
+        }
+      }
+      for (let s = 0; s < newArr.length; s++) {
+        for (let t = 0; t < res.data.data.teacher_subjects.length; t++) {
+          if (newArr[s].subjects_id == res.data.data.teacher_subjects[t].subjects_id) {
+            newArr[s].check = true
+          }
+        }
+      }
       this.setData({
+        grade_list: arr,
+        class_list: newArr,
+        birthday: res.data.data.teacher_birthday,
         userInfo: res.data.data,
-        sex_index: res.data.data.teacher_sex-1,
-        age_index: res.data.data.teacher_age
+        sex_index: res.data.data.teacher_sex - 1,
+        // age_index: res.data.data.teacher_age
       })
     })
   },
@@ -82,8 +145,9 @@ Page({
       config.ajax('img', {
         token: wx.getStorageSync('user_token')
       }, '/user/upload_img', succes => {
+        console.log(succes.data.path)
         var userInfo = this.data.userInfo
-        userInfo.user_portrait = succes.data.path
+        userInfo.teacher_portrait = succes.data.path
         this.setData({
           userInfo: userInfo
         })
@@ -96,7 +160,7 @@ Page({
   },
   userName(e) {
     var userInfo = this.data.userInfo
-    userInfo.user_nickname = e.detail.value
+    userInfo.teacher_realname = e.detail.value
     this.setData({
       userInfo: userInfo
     })
@@ -124,10 +188,32 @@ Page({
   },
   //保存个人信息
   save() {
+    let arr = []
+    for (let s = 0; s < this.data.class_list.length; s++) {
+      if (this.data.class_list[s].check) {
+        arr.push(this.data.class_list[s].subjects_id)
+      }
+    }
+    let newArr = []
+    for (let s = 0; s < this.data.grade_list.length; s++) {
+      if (this.data.grade_list[s].check) {
+        newArr.push(this.data.grade_list[s].grade_id)
+      }
+    }
+    if (arr.length == 0) {
+      config.mytoast('请至少选择一个教学科目')
+      return false
+    }
+    if (newArr.length == 0) {
+      config.mytoast('请至少选择一个教学年级')
+      return false
+    }
     config.tajax('POST', {
       realname: this.data.userInfo.teacher_realname,
       sex: this.data.sex_list[this.data.sex_index].value,
-      age: this.data.age_list[this.data.age_index].value,
+      birthday: this.data.birthday,
+      subjects: JSON.stringify(arr),
+      grade: JSON.stringify(newArr),
       // address: this.data.userInfo.user_address,
       portrait: this.data.userInfo.teacher_portrait,
       token: wx.getStorageSync('user_token'),
@@ -150,13 +236,13 @@ Page({
       complete: function (res) { },
     })
   },
-  rz(){
-wx.navigateTo({
-  url: '/pages/information/information',
-  success: function(res) {},
-  fail: function(res) {},
-  complete: function(res) {},
-})
+  rz() {
+    wx.navigateTo({
+      url: '/pages/information/information',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
   to_adder() {
     wx.navigateTo({

@@ -60,7 +60,39 @@ page {
   text-align: right;
   margin-right: 12rpx;
 }
+.class_title {
+  font-size: 26rpx;
+  color: rgba(44, 44, 44, 1);
+  margin-top: 28rpx;
+  margin-bottom: 28rpx;
+}
 
+.select_group {
+  overflow: hidden;
+}
+
+.select_item {
+  width: 208rpx;
+  height: 64rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 2rpx solid rgba(230, 230, 230, 1);
+  border-radius: 40rpx;
+  float: left;
+  margin-top: 16rpx;
+  margin-right: 16rpx;
+  font-size: 28rpx;
+  color: rgba(44, 44, 44, 0.9);
+  text-align: center;
+  line-height: 64rpx;
+}
+
+.select_class {
+  /* height: 64rpx; */
+  background: rgba(96, 234, 243, 1);
+  /* border: 2rpx solid rgba(230, 230, 230, 1); */
+  color: rgba(255, 255, 255, 1);
+
+}
 .out_group_green {
  width: 700rpx;
   height: 96rpx;

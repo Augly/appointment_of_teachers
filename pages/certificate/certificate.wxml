@@ -13,7 +13,7 @@
 <view class='up_wrap' bindtap='get_certificate_img'>
   <block wx:if="{{certificate_img==''}}">
     <text class='iconfont icon-hao'></text>
-    <text class='title'>身份证正面</text>
+    <text class='title'>上传证书</text>
   </block>
   <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{certificate_img}}' wx:else></image>
 </view>
