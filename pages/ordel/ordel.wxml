@@ -70,7 +70,7 @@
     <!-- <view class='mask_buttom mask_sure' catchtap='wszl'>完善资料</view> -->
   </block>
   <block wx:if="{{type==4}}">
-    <view class='dk_wrap'>
+    <view class='dk_wrap' catchtap='showMask'>
       <view class='imgRes'>
         <image src='{{dk_img}}' class='imgRes_img'></image>
         <image class='phone' src='http://class.zzvlm.com/pgon3834@2x.png' catchtap='up_val'></image>

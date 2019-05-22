@@ -268,6 +268,11 @@ Page({
       })
     }
   },
+  showMask(){
+    this.setData({
+      mask:true
+    })
+  },
   rz(){
     this.setData({
       mask: true,

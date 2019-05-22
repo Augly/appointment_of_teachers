@@ -1,9 +1,7 @@
 <view class='list borT' bindtap='list_detail' wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item">
   <view class='list_head'>
     <text class='list_head_title'>{{item.user_balance_createtime.week}}</text>
-    <text class='list_head_mintitle'>
-      {{item.user_balance_createtime.month}}-{{item.user_balance_createtime.day}}
-    </text>
+    <text class='list_head_mintitle'>{{item.user_balance_createtime.month}}-{{item.user_balance_createtime.day}} </text>
   </view>
   <view class='list_group'>
     <image class='list_logo' src='http://class.zzvlm.com/3529@2x.png'></image>

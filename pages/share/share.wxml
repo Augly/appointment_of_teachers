@@ -3,6 +3,6 @@
 <view class='button' bindtap='show_mask'>生成图片</view>
 
 <view class='mask' wx:if="{{mask}}" bindtap='save_pic'>
-  <canvas canvas-id="myCanvas" id='myCanvas' class='mask_content'/>
+  <canvas canvas-id="myCanvas" id='myCanvas' class='mask_content' catchtap='showmask' />
   <view class='button_group' style='margin-top:100rpx' catchtap='save'>保存图片</view>
 </view>

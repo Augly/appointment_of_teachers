@@ -48,6 +48,11 @@ Page({
   onReady: function () {
 
   },
+  showmask(){
+    this.setData({
+      mask:true
+    })
+  },
   //取消订单
   cendel_ordel() {
     wx.showModal({

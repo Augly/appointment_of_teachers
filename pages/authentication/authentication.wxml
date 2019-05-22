@@ -5,8 +5,8 @@
   <view class='line'></view>
   <view class='step'>3</view>
 </view>
-<view class='tip'>手持身份证照片
-  <text class='tip_click' bindtap='hide_mask'>查看拍照规范</text>
+<view class='tip'>上传身份证正反面
+  <!-- <text class='tip_click' bindtap='hide_mask'>查看拍照规范</text> -->
 </view>
 
 <view class='up_wrap' bindtap='zm'>

@@ -334,8 +334,8 @@ page {
 }
 
 .phone {
-  width: 58rpx;
-  height: 58rpx;
+  width: 70rpx;
+  height: 70rpx;
   position: absolute;
   right: 0;
   bottom: 0;

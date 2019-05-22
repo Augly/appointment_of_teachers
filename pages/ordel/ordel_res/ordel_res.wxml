@@ -61,7 +61,7 @@
 
 
 <view class='mask' bindtap='hidemask' wx:if="{{mask}}">
-  <view class='dk_wrap'>
+  <view class='dk_wrap' catchtap='showmask'>
     <view class='imgRes'>
       <image src='{{dk_img}}' class='imgRes_img'></image>
       <image class='phone' src='http://class.zzvlm.com/pgon3834@2x.png' catchtap='up_val'></image>

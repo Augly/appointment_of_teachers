@@ -21,6 +21,11 @@ Page({
       mask:false
     })
   },
+  showmask(){
+    this.setData({
+      mask: true
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -28,12 +33,15 @@ Page({
     this.get_userInfo()
   },
   get_userInfo() {
-    config.ajax('POST', {
+    config.tajax('POST', {
       token: wx.getStorageSync('user_token')
-    }, '/user/user_info', res => {
+    }, '/user/teacher_info', res => {
       this.setData({
-        'imglist[1]': 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data.user_portrait,
-        name: res.data.data.user_nickname,
+        'imglist[1]': 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data.teacher_portrait,
+        name: res.data.data.teacher_exigency_name,
+        list: res.data.data.teacher_subjects.map((item)=>{
+          return item.subjects_name
+        }),
       })
     })
   },
@@ -111,12 +119,12 @@ Page({
     ctx.setFillStyle('#2C2C2C')
     ctx.fillText(that.data.name, that.rem(146), that.rem(417))
     //绘制用户标签
-    ctx.setFillStyle('#60EAF3')
-    ctx.fillRect(that.rem(160) + ctx.measureText(that.data.name).width, that.rem(417 - 30), that.rem(128), that.rem(40))
-    ctx.setFontSize(that.rem(24 ))
-    ctx.setTextAlign('left')
-    ctx.setFillStyle('#FFFFFF')
-    ctx.fillText(that.data.tip, that.rem(160 + 45) + ctx.measureText(that.data.name).width, that.rem(417), that.rem(128))
+    // ctx.setFillStyle('#60EAF3')
+    // ctx.fillRect(that.rem(160) + ctx.measureText(that.data.name).width, that.rem(417 - 30), that.rem(128), that.rem(40))
+    // ctx.setFontSize(that.rem(24 ))
+    // ctx.setTextAlign('left')
+    // ctx.setFillStyle('#FFFFFF')
+    // ctx.fillText(that.data.tip, that.rem(160 + 45) + ctx.measureText(that.data.name).width, that.rem(417), that.rem(128))
     //绘制学院信息
     ctx.setFontSize(that.rem(22))
     ctx.setTextAlign('left')
