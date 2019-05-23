@@ -33,7 +33,7 @@
       <view class='scope_normel_button' wx:if="{{tabindex==0}}" catchtap='reject_order' data-id='{{item.order_id}}'>
         驳回此单
       </view>
-      <view class='scope_normel_button' wx:if="{{tabindex==1}}" catchtap='cendel_ordel'>取消订单</view>
+      <!-- <view class='scope_normel_button' wx:if="{{tabindex==1}}" catchtap='cendel_ordel'>取消订单</view> -->
       <view class='scope_normel_button button_active' wx:if="{{tabindex==0}}" catchtap='receive_order' data-id='{{item.order_id}}'>
         立即接单
       </view>

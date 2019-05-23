@@ -2,6 +2,7 @@
   "pages": [
     "pages/ordel/ordel",
     "pages/xy/xy",
+    "pages/notice/notice",
     "pages/tx/tx",
     "pages/share/share",
     "pages/my/my",
@@ -45,6 +46,12 @@
         "text": "首页",
         "iconPath": "status/fill@2x.png",
         "selectedIconPath": "status/indexfill@2xselect.png"
+      },
+      {
+        "pagePath": "pages/notice/notice",
+        "text": "消息",
+        "iconPath": "status/notice.png",
+        "selectedIconPath": "status/notice.png"
       },
       {
         "pagePath": "pages/my/my",

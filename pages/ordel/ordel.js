@@ -43,7 +43,9 @@ Page({
     config.tajax('POST', {
       token: wx.getStorageSync('user_token')
     }, '/check/pay_deposit', res => {
-      console.log(res)
+      config.pay(JSON.parse(res.data.data), res => {
+        this.get_status();
+      })
     })
   },
   //立即接单

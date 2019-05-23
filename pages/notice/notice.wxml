@@ -1,0 +1,11 @@
+<view class="list" wx:for="{{noticeList}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+  <view class='list_res' >
+    <view class='title'>{{item.user_message_title}}</view>
+    <view class='date'>{{item.user_message_createtime}}</view>
+    <view class='content'>{{item.user_message_content}}</view>
+  </view>
+  <text class='iconfont icon-arr-right-red'></text>
+</view>
+  <view class='nodata' wx:if="{{noticeList.length==0}}">
+    暂无数据~
+  </view>
