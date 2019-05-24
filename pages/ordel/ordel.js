@@ -244,13 +244,16 @@ Page({
     },'/check/audit_status',res=>{
       console.log(res)
       if (res.data.data.teacher_audit_status==2){
+        this.setData({
+          mask: false,
+          type: res.data.data.teacher_audit_status
+        })
         if (this.data.tabindex == 0) {
           this.get_order_receiving()
         } else if (this.data.tabindex == 1) {
         
           this.get_order_clock()
         } else if (this.data.tabindex == 2) {
-        
           this.get_order_estimate()
         } else {
           this.get_order_accomplish()

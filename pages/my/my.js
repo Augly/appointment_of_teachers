@@ -23,7 +23,7 @@ Page({
       token: wx.getStorageSync('user_token')
     }, '/check/audit_status', res => {
       // console.log(res)
-      if (res.data.data.teacher_audit_status == -1){
+      if (res.data.data.teacher_audit_status == 1 || res.data.data.teacher_audit_status == 3 || res.data.data.teacher_audit_status == 0){
         wx.switchTab({
           url: '/pages/ordel/ordel',
           success: function(res) {},

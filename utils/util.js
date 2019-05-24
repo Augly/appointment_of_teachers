@@ -91,6 +91,34 @@ function mytoast(main, successData) {
     complete: function (res) { },
   })
 }
+//支付函数
+function pay(res, successData) {
+  wx.requestPayment({
+    "timeStamp": res.timeStamp,
+    "nonceStr": res.nonceStr,
+    "package": res.package,
+    "signType": "MD5",
+    "paySign": res.paySign,
+    "success": function (res) {
+      wx.showToast({
+        title: '支付完成',
+        icon: "success",
+        duration: 1500,
+        success: function (data) {
+          successData(data)
+        }
+      })
+    },
+    "fail": function (res) {
+      console.log(res)
+      wx.showToast({
+        title: '取消支付成功！',
+        icon: "success",
+        duration: 1500,
+      })
+    }
+  })
+}
 /**
  * 选择图片
  */
@@ -447,6 +475,7 @@ module.exports = {
   https: https,
   ajax: ajax,
   tajax: tajax,
+  pay: pay,
   rem: rem,
   remW: remW,
   chooseImage: chooseImage,

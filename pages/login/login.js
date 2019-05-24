@@ -104,25 +104,35 @@ Page({
       config.mytoast('请输入短信验证码!')
       return false
     }
-    config.ajax('POST', {
-      phone: this.data.user_phone,
-      code: this.data.user_password,
-      portrait: this.data.info.avatarUrl || '',
-      nickname: this.data.info.nickName || '',
-      sex: this.data.info.gender || 1,
-      wx_code: app.globalData.wx_code,
-      inviter_id: wx.getStorageSync('inviter_id') || ''
-    }, '/login/user_login', res => {
-      wx.setStorageSync('user_token', res.data.data.user_token)
-      wx.setStorageSync('user_openid', res.data.data.user_openid)
-      this.get_userInfo()
-      wx.switchTab({
-        url: '/pages/ordel/ordel',
-        success: function (res) { },
-        fail: function (res) { },
-        complete: function (res) { },
-      })
+    wx.login({
+      success: (res) => {
+        if (res.code) {
+          config.tajax('POST', {
+            phone: this.data.user_phone,
+            code: this.data.user_password,
+            portrait: this.data.info.avatarUrl || '',
+            nickname: this.data.info.nickName || '',
+            sex: this.data.info.gender || 1,
+            wx_code: res.code,
+            inviter_id: wx.getStorageSync('inviter_id') || ''
+          }, '/login/user_login', res => {
+            wx.setStorageSync('user_token', res.data.data.user_token)
+            wx.setStorageSync('user_openid', res.data.data.user_openid)
+            this.get_userInfo()
+            wx.switchTab({
+              url: '/pages/ordel/ordel',
+              success: function (res) { },
+              fail: function (res) { },
+              complete: function (res) { },
+            })
+          })
+          app.globalData.wx_code = res.code
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
     })
+
   },
   /**
    * 生命周期函数--监听页面隐藏

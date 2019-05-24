@@ -51,7 +51,7 @@
         "pagePath": "pages/notice/notice",
         "text": "消息",
         "iconPath": "status/notice.png",
-        "selectedIconPath": "status/notice.png"
+        "selectedIconPath": "status/notice_select.png"
       },
       {
         "pagePath": "pages/my/my",
