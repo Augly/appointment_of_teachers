@@ -72,7 +72,7 @@
   <block wx:if="{{type==4}}">
     <view class='dk_wrap' catchtap='showMask'>
       <view class='imgRes'>
-        <image src='{{dk_img}}' class='imgRes_img'></image>
+        <image src='{{dk_img}}' class='imgRes_img' catchtap='up_val'></image>
         <image class='phone' src='http://class.zzvlm.com/pgon3834@2x.png' catchtap='up_val'></image>
       </view>
       <text class='dk_title'>打卡工作</text>
