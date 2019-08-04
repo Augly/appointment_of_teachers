@@ -1,14 +1,14 @@
 <view class='head'>
   <view class='left'>
     <text class='left_title'>
-      {{info.order_status==1?'待匹配':info.order_status==2?'待接单':info.order_status==3?'待付款':info.order_status==4?'待授课':info.order_status==5?'待评价':info.order_status==10?'订单已取消':'完成'}}
+      {{info.order_status==1?'待匹配':info.order_status==2?'待接单':info.order_status==3?'待付款':info.order_status==4?'待授课':info.order_status==5?'待用户评价':info.order_status==10?'订单已取消':'完成'}}
     </text>
     <text class='left_mintitle'>明天0点自动关闭</text>
   </view>
   <!-- <image></image> -->
 </view>
 <view class='wrap'>
-  <view class='head_top borT' bindtap='to_teacher_res'>
+  <view class='head_top borT' >
     <image class='top_val' src="{{info.user_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+info.user_portrait:default_src}}"></image>
     <view class='top_res'>
       <view class='top_res_title'>
@@ -18,7 +18,7 @@
       </view>
       <view class='top_res_detail'>{{info.grade_name?info.grade_name:'未获取'}} · {{info.subjects_name?info.teachersubjects_name_major:'未获取'}}</view>
     </view>
-    <text class='iconfont icon-arr-right-red'></text>
+    <!-- <text class='iconfont icon-arr-right-red'></text> -->
   </view>
   <view class='list_wrap borT'>
     <view class='list_item'>
@@ -39,7 +39,7 @@
     </view>
     <view class='list_item'>
       <text class='title'>订单状态</text>
-      <text class='mintitle'>  {{info.order_status==1?'待选择教师':info.order_status==2?'待教师接单':info.order_status==3?'等待卖家付款':info.order_status==4?'等待教师授课':info.order_status==4?'待评价':info.order_status==10?'订单已取消':'完成'}}</text>
+      <text class='mintitle'>  {{info.order_status==1?'待选择教师':info.order_status==2?'待教师接单':info.order_status==3?'等待卖家付款':info.order_status==4?'等待教师授课':info.order_status==4?'待用户评价':info.order_status==10?'订单已取消':'完成'}}</text>
     </view>
   </view>
   <view class='price_group borT'>
@@ -55,7 +55,7 @@
 
 <view class='bottom_group'>
   <view class='cendel' bindtap='cendel_ordel' wx:if="{{info.order_status<=2}}">驳回订单</view>
-  <view class='payed' bindtap='pay_ordel'>{{info.order_status==1?'去匹配':info.order_status==2?'立即接单':info.order_status==3?'待付款':info.order_status==4?'立即打卡':info.order_status==5?'待评价':info.order_status==10?'订单已取消':'完成'}}</view>
+  <view class='payed' bindtap='pay_ordel'>{{info.order_status==1?'去匹配':info.order_status==2?'立即接单':info.order_status==3?'待付款':info.order_status==4?'立即打卡':info.order_status==5?'待用户评价':info.order_status==10?'订单已取消':'完成'}}</view>
 </view>
 
 
