@@ -1,16 +1,16 @@
 // pages/authentication/authentication.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mask:false,
-    zm_id:'',
-    fm_id:''
+    mask: false,
+    zm_id: '',
+    fm_id: ''
   },
-  hide_mask(){
+  hide_mask() {
     this.setData({
       mask: !this.data.mask
     })
@@ -21,7 +21,7 @@ Page({
   onLoad: function (options) {
 
   },
-  zm(){
+  zm() {
     config.chooseImage(res => {
       config.ajax('img', {
         token: wx.getStorageSync('user_token')
@@ -51,7 +51,7 @@ Page({
       }, res.tempFilePaths[0])
     })
   },
-  next(){
+  next() {
     // if(this.data.zm_id==''){
     //   config.mytoast('请上传正面身份证')
     //   return false
@@ -61,15 +61,15 @@ Page({
     //   return false
     // }
     let info = wx.getStorageSync('info')
-    info['identity_zheng']=this.data.zm_id
+    info['identity_zheng'] = this.data.zm_id
     info['identity_fan'] = this.data.fm_id
 
     wx.setStorageSync('info', info)
     wx.navigateTo({
       url: '/pages/certificate/certificate',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) {},
+      fail: function (res) {},
+      complete: function (res) {},
     })
   },
   /**
@@ -118,6 +118,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

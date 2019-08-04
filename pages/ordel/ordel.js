@@ -24,6 +24,10 @@ Page({
     if (options.inviter_id){
       wx.setStorageSync('inviter_id',options.inviter_id)
     }
+    if (options.scene != undefined && options.scene != null) {
+      const url = decodeURIComponent(options.scene).split('=')
+      wx.setStorageSync('inviter_id', url[1])
+    }
   },
   //驳回订单
   reject_order(e) {
@@ -336,7 +340,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function () { return config.shareData
 
   }
 })

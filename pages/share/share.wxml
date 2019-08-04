@@ -1,4 +1,4 @@
-<image class='share_logo' src='http://class.zzvlm.com/2017041969914926076563635@2x.png'></image>
+<image class='share_logo' src='{{codeImg}}'></image>
 
 <view class='button' bindtap='show_mask'>生成图片</view>
 

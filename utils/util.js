@@ -469,7 +469,10 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
 
   }
 };
-
+const shareData = {
+  title: '约课教师端',
+  path: '/pages/ordel/ordel?inviter_id=' + wx.getStorageSync('inviter_id')
+}
 //导出模块
 module.exports = {
   https: https,
@@ -482,4 +485,5 @@ module.exports = {
   getData: getData,
   mytoast: mytoast,
   timeForm: timeForm,
+  shareData: shareData
 }

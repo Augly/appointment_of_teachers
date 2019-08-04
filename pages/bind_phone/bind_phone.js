@@ -1,21 +1,21 @@
 // pages/bind_phone/bind_phone.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    code_type:'验证码',
-    user_phone:'',
-    user_code:''
+    code_type: '验证码',
+    user_phone: '',
+    user_code: ''
   },
-  getphone(e){
+  getphone(e) {
     this.setData({
-      user_phone:e.detail.value
+      user_phone: e.detail.value
     })
   },
-  get_code(e){
+  get_code(e) {
     this.setData({
       user_code: e.detail.value
     })
@@ -28,7 +28,7 @@ Page({
     }
     if (this.data.code_type == '验证码') {
       config.ajax('POST', {
-        token:wx.getStorageSync('user_token'),
+        token: wx.getStorageSync('user_token'),
         phone: this.data.user_phone
       }, '/user/change_phone_smscode', res => {
         this.setData({
@@ -72,17 +72,17 @@ Page({
   onShow: function () {
 
   },
-  return_go(){
-    config.ajax('POST',{
-      token:wx.getStorageSync('user_token'),
-      phone:this.data.user_phone,
-      code:this.data.user_code
-    },'/user/change_phone',res=>{
+  return_go() {
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token'),
+      phone: this.data.user_phone,
+      code: this.data.user_code
+    }, '/user/change_phone', res => {
       wx.navigateBack({
         delta: 1,
       })
     })
-    
+
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -116,6 +116,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

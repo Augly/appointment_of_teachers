@@ -8,6 +8,7 @@ Page({
    */
   data: {
     mask:false,
+    codeImg:'',
     imglist: ['http://class.zzvlm.com/2017041969914926076563635@2x.png', 'http://img.zcool.cn/community/019b7e5bbe34c9a801213dea292f6e.png@2o.png', 'http://class.zzvlm.com/123551@2x.png','https://fapiao.gaodun.com/Public/cma/x_bg.png'],
     list: ['语文','化学化学','英语'],
     name:'仇益阳',
@@ -31,6 +32,7 @@ Page({
    */
   onLoad: function (options) {
     this.get_userInfo()
+    this.get_code()
   },
   get_userInfo() {
     config.tajax('POST', {
@@ -43,6 +45,16 @@ Page({
           return item.subjects_name
         }),
       })
+    })
+  },
+  get_code(){
+    config.ajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/user/user_qrcode', res => {
+      console.log(res)
+        this.setData({
+          codeImg: 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data
+        })
     })
   },
   show_mask(){
@@ -105,7 +117,7 @@ Page({
     //绘制背景
     ctx.drawImage(that.data.newList[3], 0, 0, that.rem(592), that.rem(768));
     //绘制小程序二维码
-    ctx.drawImage(that.data.newList[0], that.rem(160), that.rem(66), that.rem(272), that.rem(272));
+    ctx.drawImage(that.data.codeImg, that.rem(160), that.rem(66), that.rem(272), that.rem(272));
     //绘制头像
     ctx.save()
     ctx.beginPath(); 
@@ -251,7 +263,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function () { return config.shareData
 
   }
 })

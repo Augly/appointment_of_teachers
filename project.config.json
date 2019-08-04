@@ -9,11 +9,12 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
-	"appid": "wx46974fd6a29fae14",
+	"appid": "wx8833d49bf4b32652",
 	"projectname": "about_class_teacher",
 	"debugOptions": {
 		"hidedInDevtools": []
