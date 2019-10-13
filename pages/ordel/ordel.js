@@ -58,6 +58,7 @@ Page({
       token: wx.getStorageSync('user_token'),
       order_id: e.currentTarget.dataset.id
     }, '/index/receive_order', res => {
+      config.mytoast(res.msg)
       this.setData({
         list: [],
         page: 1
