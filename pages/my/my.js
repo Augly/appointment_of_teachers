@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads/default/user_default.png',
+    default_src: 'https://pay.tchhkj.com/public/uploads/default/user_default.png',
     userInfo: null,
     ordel_count: 0,
     user_balance: 0
@@ -23,12 +23,12 @@ Page({
       token: wx.getStorageSync('user_token')
     }, '/check/audit_status', res => {
       // console.log(res)
-      if (res.data.data.teacher_audit_status == 1 || res.data.data.teacher_audit_status == 3 || res.data.data.teacher_audit_status == 0){
+      if (res.data.data.teacher_audit_status == 1 || res.data.data.teacher_audit_status == 3 || res.data.data.teacher_audit_status == 0) {
         wx.switchTab({
           url: '/pages/ordel/ordel',
-          success: function(res) {},
-          fail: function(res) {},
-          complete: function(res) {},
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
         })
       }
       // if (res.data.data.teacher_audit_status == 2) {
@@ -192,7 +192,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () { return config.shareData
+  onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

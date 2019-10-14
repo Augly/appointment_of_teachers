@@ -1,5 +1,5 @@
 // pages/share/share.js
-const config=require('../../utils/util.js')
+const config = require('../../utils/util.js')
 const ctx = wx.createCanvasContext('myCanvas');
 Page({
 
@@ -7,22 +7,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mask:false,
-    codeImg:'',
-    imglist: ['http://class.zzvlm.com/2017041969914926076563635@2x.png', 'http://img.zcool.cn/community/019b7e5bbe34c9a801213dea292f6e.png@2o.png', 'http://class.zzvlm.com/123551@2x.png','https://fapiao.gaodun.com/Public/cma/x_bg.png'],
-    list: ['语文','化学化学','英语'],
-    name:'仇益阳',
-    tip:'活泼可爱',
-    school:'北大',
-    _class:'计算机'
+    mask: false,
+    codeImg: '',
+    imglist: ['http://class.zzvlm.com/2017041969914926076563635@2x.png', 'http://img.zcool.cn/community/019b7e5bbe34c9a801213dea292f6e.png@2o.png', 'http://class.zzvlm.com/123551@2x.png', 'https://fapiao.gaodun.com/Public/cma/x_bg.png'],
+    list: ['语文', '化学化学', '英语'],
+    name: '仇益阳',
+    tip: '活泼可爱',
+    school: '北大',
+    _class: '计算机'
   },
   //保存图片
-  save_pic(){
+  save_pic() {
     this.setData({
-      mask:false
+      mask: false
     })
   },
-  showmask(){
+  showmask() {
     this.setData({
       mask: true
     })
@@ -39,25 +39,25 @@ Page({
       token: wx.getStorageSync('user_token')
     }, '/user/teacher_info', res => {
       this.setData({
-        'imglist[1]': 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data.teacher_portrait,
+        'imglist[1]': 'https://pay.tchhkj.com/public/uploads/' + res.data.data.teacher_portrait,
         name: res.data.data.teacher_exigency_name,
-        list: res.data.data.teacher_subjects.map((item)=>{
+        list: res.data.data.teacher_subjects.map((item) => {
           return item.subjects_name
         }),
       })
     })
   },
-  get_code(){
+  get_code() {
     config.ajax('POST', {
       token: wx.getStorageSync('user_token')
     }, '/user/user_qrcode', res => {
       console.log(res)
-        this.setData({
-          codeImg: 'http://yueke.dazhu-ltd.cn/public/uploads/' + res.data.data
-        })
+      this.setData({
+        codeImg: 'https://pay.tchhkj.com/public/uploads/' + res.data.data
+      })
     })
   },
-  show_mask(){
+  show_mask() {
     wx.showLoading({
       title: '正在生成图片',
     })
@@ -67,7 +67,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let that=this
+    let that = this
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -80,7 +80,7 @@ Page({
   rem(int) {
     return int * this.data.rem
   },
-  downImg (list) {
+  downImg(list) {
     var that = this
     let imglist = []
     let n = 0
@@ -88,7 +88,7 @@ Page({
     function up() {
       wx.downloadFile({
         url: list[n],
-        success:(res)=>{
+        success: (res) => {
           if (res.statusCode == 200) {
             imglist.push(res.tempFilePath)
             n++
@@ -120,11 +120,11 @@ Page({
     ctx.drawImage(that.data.codeImg, that.rem(160), that.rem(66), that.rem(272), that.rem(272));
     //绘制头像
     ctx.save()
-    ctx.beginPath(); 
+    ctx.beginPath();
     ctx.arc(that.rem(96) / 2 + that.rem(34), that.rem(96) / 2 + that.rem(376), that.rem(96) / 2, 0, Math.PI * 2, false);
     ctx.clip()
     ctx.drawImage(that.data.newList[1], that.rem(34), that.rem(376), that.rem(96), that.rem(96))
-    ctx.restore(); 
+    ctx.restore();
     //绘制用户名
     ctx.setFontSize(that.rem(34))
     ctx.setTextAlign('left')
@@ -154,7 +154,7 @@ Page({
     ctx.setFontSize(that.rem(34))
     ctx.setTextAlign('left')
     ctx.setFillStyle('#2C2C2C')
-    ctx.fillText('优势学科', that.rem(100), that.rem(568+38))
+    ctx.fillText('优势学科', that.rem(100), that.rem(568 + 38))
     ctx.draw(true)
     //绘制优势学科
     that.forlist(that.data.list, that, ctx)
@@ -163,17 +163,17 @@ Page({
       mask: true
     })
   },
-  drawtitle(ctx, textmain, t, that){
+  drawtitle(ctx, textmain, t, that) {
     ctx.beginPath()
     ctx.setLineWidth(that.rem(1))
     ctx.setStrokeStyle('#60EAF3')
-    ctx.strokeRect(that.rem(34) + that.rem(144+34)*t, that.rem(654), that.rem(144), that.rem(64))
+    ctx.strokeRect(that.rem(34) + that.rem(144 + 34) * t, that.rem(654), that.rem(144), that.rem(64))
     ctx.draw(true)
     ctx.setFontSize(that.rem(26))
     ctx.setTextAlign('center')
     ctx.setFillStyle('#2C2C2C')
     ctx.setTextBaseline('middle')
-    ctx.fillText(textmain, that.rem(34 + 144/2) + that.rem(144 + 34) * t, that.rem(654+32), that.rem(144))
+    ctx.fillText(textmain, that.rem(34 + 144 / 2) + that.rem(144 + 34) * t, that.rem(654 + 32), that.rem(144))
     ctx.draw(true)
   },
   forlist(list, that, ctx) {
@@ -263,7 +263,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () { return config.shareData
+  onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

@@ -1,5 +1,5 @@
 //主域名
-const https = "http://yueke.dazhu-ltd.cn/user"
+const https = "https://pay.tchhkj.com/user"
 /**
  * 时间转换
  */
@@ -289,7 +289,7 @@ function getData(e, name) {
 function tajax(Type, params, url, successData, nosuccessData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "http://yueke.dazhu-ltd.cn/teacher"
+  var https = "https://pay.tchhkj.com/teacher"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
@@ -384,7 +384,7 @@ function tajax(Type, params, url, successData, nosuccessData, errorData, complet
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "http://yueke.dazhu-ltd.cn/user"
+  var https = "https://pay.tchhkj.com/user"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }

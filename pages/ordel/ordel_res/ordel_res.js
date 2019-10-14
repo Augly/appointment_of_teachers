@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
+    default_src: 'https://pay.tchhkj.com/public/uploads//default/user_default.png',
     dk_img: '',
     mask: false
   },
@@ -48,9 +48,9 @@ Page({
   onReady: function () {
 
   },
-  showmask(){
+  showmask() {
     this.setData({
-      mask:true
+      mask: true
     })
   },
   //取消订单
@@ -173,7 +173,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () { return config.shareData
+  onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

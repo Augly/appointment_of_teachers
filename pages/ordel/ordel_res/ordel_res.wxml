@@ -9,7 +9,7 @@
 </view>
 <view class='wrap'>
   <view class='head_top borT' >
-    <image class='top_val' src="{{info.user_portrait?'http://yueke.dazhu-ltd.cn/public/uploads/'+info.user_portrait:default_src}}"></image>
+    <image class='top_val' src="{{info.user_portrait?'https://pay.tchhkj.com/public/uploads/'+info.user_portrait:default_src}}"></image>
     <view class='top_res'>
       <view class='top_res_title'>
         <text class='top_res_name'>{{info.user_nickname?info.user_nickname:'未知'}}</text>

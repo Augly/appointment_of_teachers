@@ -3,7 +3,7 @@
   <view class='list_wrap'>
     <view class='list list_val' bindtap='user_val'>
       <text class='title'>头像</text>
-      <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{userInfo.teacher_portrait}}' class='val_logo'></image>
+      <image src='https://pay.tchhkj.com/public/uploads/{{userInfo.teacher_portrait}}' class='val_logo'></image>
     </view>
     <view class='list' bindtap='user_name'>
       <text class='title'>昵称</text>
