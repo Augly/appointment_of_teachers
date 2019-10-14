@@ -6,11 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    default_src: 'http://yueke.dazhu-ltd.cn/public/uploads//default/user_default.png',
+    default_src: 'https://pay.tchhkj.com/public/uploads//default/user_default.png',
     type: 4,
     mask: false,
     list: [],
-    page:1,
+    page: 1,
     tabindex: 0,
     dk_img: '',
     dk_id: '',
@@ -21,8 +21,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.inviter_id){
-      wx.setStorageSync('inviter_id',options.inviter_id)
+    if (options.inviter_id) {
+      wx.setStorageSync('inviter_id', options.inviter_id)
     }
     if (options.scene != undefined && options.scene != null) {
       const url = decodeURIComponent(options.scene).split('=')
@@ -43,7 +43,7 @@ Page({
     })
   },
   //缴纳押金
-  pay_yj(){
+  pay_yj() {
     config.tajax('POST', {
       token: wx.getStorageSync('user_token')
     }, '/check/pay_deposit', res => {
@@ -58,6 +58,7 @@ Page({
       token: wx.getStorageSync('user_token'),
       order_id: e.currentTarget.dataset.id
     }, '/index/receive_order', res => {
+      config.mytoast(res.msg)
       this.setData({
         list: [],
         page: 1
@@ -77,7 +78,7 @@ Page({
           item.endTime = config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.hour + ':' + config.timeForm(item.order_reservetime + item.order_duration * 3600).chatTime.minute
           item.order_reservetime = config.timeForm(item.order_reservetime).chatTime
           item.order_createtime = config.timeForm(item.order_createtime).btTime
-          item.distance = parseInt(item.distance/1000)
+          item.distance = parseInt(item.distance / 1000)
           return item
         })
       })
@@ -164,7 +165,7 @@ Page({
   },
   //
   up_ok() {
-    if (this.data.dk_img==''){
+    if (this.data.dk_img == '') {
       config.mytoast('请上传打卡信息!')
       return false
     }
@@ -179,7 +180,7 @@ Page({
       console.log(complete)
     }, this.data.dk_img)
   },
-  call_dk(id, longitude, latitude,img) {
+  call_dk(id, longitude, latitude, img) {
     config.tajax('POST', {
       token: wx.getStorageSync('user_token'),
       order_id: id,
@@ -190,7 +191,7 @@ Page({
       console.log('打卡成功')
       config.mytoast('打卡成功!')
       this.setData({
-        mask:false,
+        mask: false,
         list: [],
         page: 1
       })
@@ -237,17 +238,17 @@ Page({
   select_tab(e) {
     this.setData({
       tabindex: e.currentTarget.dataset.index,
-      page:1,
-      list:[]
+      page: 1,
+      list: []
     })
     this.get_status();
   },
-  get_status(){
-    config.tajax('POST',{
-      token:wx.getStorageSync('user_token')
-    },'/check/audit_status',res=>{
+  get_status() {
+    config.tajax('POST', {
+      token: wx.getStorageSync('user_token')
+    }, '/check/audit_status', res => {
       console.log(res)
-      if (res.data.data.teacher_audit_status==2){
+      if (res.data.data.teacher_audit_status == 2) {
         this.setData({
           mask: false,
           type: res.data.data.teacher_audit_status
@@ -255,34 +256,34 @@ Page({
         if (this.data.tabindex == 0) {
           this.get_order_receiving()
         } else if (this.data.tabindex == 1) {
-        
+
           this.get_order_clock()
         } else if (this.data.tabindex == 2) {
           this.get_order_estimate()
         } else {
           this.get_order_accomplish()
         }
-      }else{
+      } else {
         this.setData({
-          mask:true,
+          mask: true,
           type: res.data.data.teacher_audit_status
         })
       }
     })
   },
   hidemask() {
-    if(this.data.type==4){
+    if (this.data.type == 4) {
       this.setData({
         mask: false
       })
     }
   },
-  showMask(){
+  showMask() {
     this.setData({
-      mask:true
+      mask: true
     })
   },
-  rz(){
+  rz() {
     this.setData({
       mask: true,
       type: -1
@@ -340,7 +341,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () { return config.shareData
+  onShareAppMessage: function () {
+    return config.shareData
 
   }
 })

@@ -14,14 +14,14 @@
     <text class='iconfont icon-hao'></text>
     <text class='title'>身份证正面</text>
   </block>
-  <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{zm_id}}' wx:else></image>
+  <image src='https://pay.tchhkj.com/public/uploads/{{zm_id}}' wx:else></image>
 </view>
 <view class='up_wrap' bindtap='fm'>
   <block wx:if="{{fm_id==''}}">
     <text class='iconfont icon-hao'></text>
     <text class='title'>身份证反面</text>
   </block>
-  <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{fm_id}}' wx:else></image>
+  <image src='https://pay.tchhkj.com/public/uploads/{{fm_id}}' wx:else></image>
 </view>
 <view class='button' bindtap='next'>
 下一步

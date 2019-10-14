@@ -6,7 +6,7 @@
   <view class='step'>3</view>
 </view>
 <view class='portrait_group'>
-  <image class='portrait' src='http://yueke.dazhu-ltd.cn/public/uploads/{{portrait}}'></image>
+  <image class='portrait' src='https://pay.tchhkj.com/public/uploads/{{portrait}}'></image>
   <image class='photo' src='http://class.zzvlm.com/pgon3834@2x.png' bindtap='user_val'></image>
 </view>
 <view class='mintitle'>上传头像</view>

@@ -15,7 +15,7 @@
     <text class='iconfont icon-hao'></text>
     <text class='title'>上传证书</text>
   </block>
-  <image src='http://yueke.dazhu-ltd.cn/public/uploads/{{certificate_img}}' wx:else></image>
+  <image src='https://pay.tchhkj.com/public/uploads/{{certificate_img}}' wx:else></image>
 </view>
 <view class='button' bindtap='next'>
   下一步

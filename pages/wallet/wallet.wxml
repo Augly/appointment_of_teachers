@@ -2,7 +2,7 @@
   账户明细<text class='iconfont icon-arr-right-red'></text>
 </view>
 
-<image class='logo' src='http://class.zzvlm.com/3529@2x.png'></image>
+<image class='logo' src='/status/3529.png'></image>
 <view class='money'>¥{{user_balance}}</view>
 <view class='tip'>账户余额(元)</view>
 <!-- <view class='tipR'>订单总收益：52010元</view> -->
