@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: zero
+ * @Date: 2019-10-28 22:46:29
+ * @LastEditors: zero
+ * @LastEditTime: 2019-10-28 23:01:12
+ */
 // pages/ordel/ordel_res/ordel_res.js
 const config = require('../../../utils/util.js')
 Page({
@@ -84,8 +92,7 @@ Page({
   },
   dk_success(data) {
     wx.getLocation({
-      type: 'gcj02 ',
-      altitude: false,
+      type: 'wgs84 ',
       success: (res) => {
         this.call_dk(this.data.info.order_id, res.longitude, res.latitude, data.data.path)
       },

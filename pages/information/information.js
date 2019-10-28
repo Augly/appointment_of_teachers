@@ -50,7 +50,7 @@ Page({
     }
     let year = new Date().getFullYear();
     let mouth = new Date().getMonth() + 1;
-    mouth = mouth > 10 ? mouth : '0' + mouth
+    mouth = mouth > 9 ? mouth : '0' + mouth
     let day = new Date().getDate();
     day = day > 9 ? day : '0' + day
     this.setData({
