@@ -75,6 +75,13 @@ Page({
       complete: function (res) { },
     })
   },
+  up_val() {
+    config.chooseImage(res => {
+      this.setData({
+        dk_img: res.tempFilePaths[0]
+      })
+    })
+  },
   up_ok() {
     if (this.data.dk_img == '') {
       config.mytoast('请上传打卡信息!')
@@ -113,7 +120,11 @@ Page({
       clock_img: img
     }, '/index/clock_order', succes => {
       config.mytoast('打卡成功!')
-      this.get_order_clock()
+      this.setData({
+        mask:false,
+        dk_img:''
+      })
+      this.get_init_data(this.data.id)
     })
   },
   //付款

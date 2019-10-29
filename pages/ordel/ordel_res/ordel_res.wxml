@@ -61,13 +61,13 @@
 
 
 <view class='mask' bindtap='hidemask' wx:if="{{mask}}">
-  <view class='dk_wrap' catchtap='showmask'>
-    <view class='imgRes'>
-      <image src='{{dk_img}}' class='imgRes_img'></image>
-      <image class='phone' src='http://class.zzvlm.com/pgon3834@2x.png' catchtap='up_val'></image>
+    <view class='dk_wrap' catchtap='showMask'>
+      <view class='imgRes'>
+        <image src='{{dk_img}}' class='imgRes_img' catchtap='up_val'></image>
+        <image class='phone' src='http://class.zzvlm.com/pgon3834@2x.png' catchtap='up_val'></image>
+      </view>
+      <text class='dk_title'>打卡工作</text>
+      <text class='dk_mintitle'>上传相关照片确认打卡</text>
+      <view class='mask_buttom' catchtap='up_ok'>立即上传</view>
     </view>
-    <text class='dk_title'>打卡工作</text>
-    <text class='dk_mintitle'>上传相关照片确认打卡</text>
-    <view class='mask_buttom' catchtap='up_ok'>立即上传</view>
-  </view>
 </view>
